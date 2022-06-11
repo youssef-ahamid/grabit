@@ -3,34 +3,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0044FF',
-        secondary: '#88A8FF',
-        tertiary: '#88A8FF45',
         neutral: {
-          DEFAULT: '#F3F3F3',
+          DEFAULT: '#FFF7F0',
           light: '#ffffff',
           dark: '#000000',
         },
-        lightBlue: "#73B3EB",
-        accent: '#f9f614',
-        error: '#e86f68',
+        brand: {
+          light: "#FADA79",
+          DEFAULT: "#B9752A",
+          dark: "#621227"
+        }
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],
-      },
-      keyframes: {
-        wiggle: {
-          '0%, 50%, 100%': { transform: 'translateX(0)' },
-          '60%': { transform: 'translateX(10px)' },
-          '70%': { transform: 'translateX(-10px)' },
-          '80%': { transform: 'translateX(10px)' },
-          '85%': { transform: 'translateX(-5px)' },
-          '90%': { transform: 'translateX(5px)' },
-          '95%': { transform: 'translateX(-5px)' },
-        },
-      },
-      animation: {
-        wiggle: 'wiggle 1s linear forwards',
       },
     },
   },
