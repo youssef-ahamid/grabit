@@ -1,7 +1,7 @@
 <script>
   /* props */
   export let type = 'primary' // *, secondary
-  export let shape = 'default' // *, ghost, full,
+  export let shape = 'ghost' // *, ghost, full,
   export let icon = null // *, icon component
   export let className = '' // *, custom wrapper classes
   export let label = '' // *, button text

@@ -47,7 +47,7 @@
   }
 
   .slide-underline {
-    @apply relative before:absolute before:w-full before:scale-x-0 hover:before:scale-x-100 before:h-px before:bg-current before:top-full before:origin-left before:transition before:duration-300 before:ease-out
+    @apply relative before:absolute before:w-full before:scale-x-0 hover:before:scale-x-100 before:h-[1.5px] before:rounded-full before:bg-current before:top-full before:origin-left before:transition before:duration-300 before:ease-out
   }
 
   /* transition helpers */
