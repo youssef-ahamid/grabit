@@ -1,3 +1,1 @@
-# kenshi
-
-ship things fast
+# NewCastle School

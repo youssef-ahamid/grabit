@@ -16,8 +16,7 @@ module.exports = {
         error: '#e86f68',
       },
       fontFamily: {
-        heading: ['poppins', 'sans-serif'],
-        body: ['Raleway', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
       },
       keyframes: {
         wiggle: {

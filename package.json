@@ -1,9 +1,9 @@
 {
-  "name": "klik",
+  "name": "newcastleschool",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "svelte-kit dev --port 3002",
+    "dev": "svelte-kit dev --port 3030",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -27,8 +27,5 @@
     "prettier-plugin-svelte": "2.6.0",
     "svelte": "3.46.4",
     "tailwindcss": "3.0.19"
-  },
-  "dependencies": {
-    "zaagel": "0.2.2"
   }
 }
