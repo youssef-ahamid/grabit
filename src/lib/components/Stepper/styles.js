@@ -2,7 +2,7 @@ import { resolve } from '$lib/helpers'
 
 export let stepperStyles = props => {
   return [
-    { classes: ' },
+    { classes: 'hidden' },
     { on: [props.direction, 'vertical'], classes: '' },
     { on: [props.direction, 'horizontal'], classes: '' },
   ]

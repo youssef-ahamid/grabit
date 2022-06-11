@@ -1,29 +1,41 @@
 export const imgWrapper = props => {
   return [
     {
-      classes: '',
+      classes: 'relative group overflow-visible w-full',
       on: true,
     },
-    { classes: '', styles: '', on: props.type == 'custom' },
+    {
+      classes: 'max-w-[60px] md:max-w-[100px]',
+      styles: '',
+      on: props.size == 'sm',
+    },
+    {
+      classes: 'max-w-[150px] md:max-w-[200px]',
+      styles: '',
+      on: props.size == 'md',
+    },
+    {
+      classes: 'md:max-w-[500px]',
+      styles: '',
+      on: props.size == 'lg',
+    },
   ]
 }
 
 export const imgOverlay = props => {
   return [
     {
-      classes: '',
+      classes: 'transition duration-300 ease-out',
       on: true,
     },
-    { classes: '', styles: '', on: props.type == 'custom' },
   ]
 }
 
 export const img = props => {
   return [
     {
-      classes: '',
+      classes: 'w-full h-auto block transition duration-300 ease-out',
       on: true,
     },
-    { classes: '', styles: '', on: props.type == 'custom' },
   ]
 }

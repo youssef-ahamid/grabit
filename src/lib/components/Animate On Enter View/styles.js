@@ -2,7 +2,7 @@ export const animationWrapper = props => {
   return [
     {
       classes:
-        'transition duration-700 ease-out delay-100 overflow-hidden',
+        'transition duration-700 ease-out delay-100 oveflow-hidden',
       on: true,
     },
     {
@@ -28,6 +28,14 @@ export const animationWrapper = props => {
     {
       classes: 'translate-x-0 opacity-100',
       on: props.type == 'flyLeft' && props.intersecting,
+    },
+    {
+      classes: 'translate-y-12 opacity-0',
+      on: props.type == 'flyUp' && !props.intersecting,
+    },
+    {
+      classes: 'translate-y-0 opacity-100',
+      on: props.type == 'flyUp' && props.intersecting,
     },
   ]
 }

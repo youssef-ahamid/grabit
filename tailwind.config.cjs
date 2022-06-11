@@ -3,14 +3,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#000000',
-        secondary: '#ffffff',
+        primary: '#0044FF',
+        secondary: '#88A8FF',
+        tertiary: '#88A8FF45',
+        neutral: {
+          DEFAULT: '#F3F3F3',
+          light: '#ffffff',
+          dark: '#000000',
+        },
+        lightBlue: "#73B3EB",
         accent: '#f9f614',
         error: '#e86f68',
       },
       fontFamily: {
-        heading: ['Montserrat', 'sans-serif'],
-        body: ['Helvetica', 'sans-serif'],
+        heading: ['poppins', 'sans-serif'],
+        body: ['Raleway', 'sans-serif'],
       },
       keyframes: {
         wiggle: {
@@ -28,5 +35,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
+  ],
 }

@@ -1,5 +1,9 @@
 <script>
   export let type = 'fade'
+  export let delay = 0
+  export let className = ''
+  export let styles = ''
+  export let noExit = false
 
   let element
   let intersecting = false
@@ -15,6 +19,8 @@
   }
 
   const exit = () => {
+    if (noExit) return
+
     intersecting = false
     dispatch('exit')
   }
@@ -27,10 +33,13 @@
 </script>
 
 <div
-  use:inView={{ bottom: 100 }}
+  use:inView={{ bottom: 20 }}
+  style="{styles} {intersecting
+    ? `transition-delay: ${delay}ms`
+    : ''}"
   on:enter={enter}
   on:exit={exit}
-  class={wrapper.classes}
+  class={`${wrapper.classes} ${className}`}
 >
   <slot />
 </div>

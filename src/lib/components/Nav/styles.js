@@ -4,16 +4,23 @@ export let iconWrapper = options => {
   return [
     {
       classes:
-        'transition duration-200 w-12 h-12 md:h-16 scale-125 pl-1 flex rounded-full flex-col items-center justify-center text-center md:w-16 fixed md:absolute bg-secondary shadow-secondary/30 shadow-xl right-8 top-10 md:left-8 md:top-1/2 md:-translate-y-1/2 z-[999]',
+        'transition duration-300 ease-out w-12 h-12 scale-125 pl-1 flex rounded-full flex-col items-center justify-center text-center lg:w-16 fixed lg:hidden shadow-secondary/30 right-8 top-10 z-[999]',
     },
     {
       on: [options.active, true],
-      classes:
-        'bg-transparent md:bg-primary md:bg-opacity-50 text-primary md:text-secondary',
+      classes: 'shadow-none',
     },
     {
       on: [options.active, false],
-      classes: 'bg-secondary bg-opacity-75 text-primary',
+      classes: 'shadow-lg',
+    },
+    {
+      on: [options.type, 'primary'],
+      classes: 'bg-neutral-light text-primary',
+    },
+    {
+      on: [options.type, 'secondary'],
+      classes: 'bg-primary text-neutral-light',
     },
   ]
 }
@@ -21,7 +28,15 @@ export let iconWrapper = options => {
 export let icon = options => {
   return [
     {
-      classes: `scale-75 md:scale-100`,
+      classes: `transition duration-500`,
+    },
+    {
+      on: [options.active, true],
+      classes: 'rotate-[270deg] scale-90',
+    },
+    {
+      on: [options.active, false],
+      classes: 'scale-75',
     },
   ]
 }
@@ -45,7 +60,8 @@ export let inactive = options => {
 export let link = options => {
   return [
     {
-      classes: 'mt-12 md:mt-16',
+      classes:
+        'm-2 capitalize text-base lg:text-lg font-medium lg:font-normal max-w-fit lg:max-w-full',
     },
   ]
 }
@@ -54,7 +70,7 @@ export let links = options => {
   return [
     {
       classes:
-        'before:absolute before:top-16 before:-translate-y-1/2 before:left-0 before:w-[80%] md:before:w-96 before:h-0.5 md:before:h-1 before:bg-primary before:rounded-r-full pt-16 md:pl-16',
+        'lg:max-w-[90%] w-full mx-auto flex flex-col lg:flex-row justify-end py-12 lg:py-4 lg:px-2',
     },
   ]
 }
@@ -63,16 +79,17 @@ export let nav = options => {
   return [
     {
       classes:
-        'md:top-0 fixed top-0 left-0 bottom-0 right-0 md:right-auto md:w-[520px] md:left-0 bg-secondary p-12 md:p-16 rounded-3xl drop-shadow-[5px_15px_25px_rgba(225,226,239,0.18)] z-[998] transition duration-500 ease-out',
-    },
-    {
-      on: [options.active, false],
-      classes: '-translate-x-full opacity-25',
+        'fixed lg:absolute lg:mt-8 lg:flex lg:justify-end lg:bg-white ring ring-primary -ml-1 lg:ml-0 lg:ring-transparent transition duration-500 ease-out top-0 left-0 bottom-0 lg:bottom-auto lg:translate-x-0 lg:right-0 w-full p-4 z-[998] bg-neutral-light',
     },
     {
       on: [options.active, true],
-      classes: 'translate-x-0 opacity-100',
+      classes: 'translate-x-0',
     },
+    {
+      on: [options.active, false],
+      classes: '-translate-x-full',
+    },
+    
   ]
 }
 

@@ -3,7 +3,12 @@ import { resolve } from '$lib/helpers'
 export let section = options => {
   return [
     {
-      classes: '',
+      classes:
+        'relative overflow-hidden bg-cover bg-center bg-no-repeat',
+    },
+    {
+      on: [options.fullHeight, true],
+      classes: 'min-h-screen',
     },
   ]
 }
@@ -12,7 +17,11 @@ export let content = options => {
   return [
     {
       on: [options.noContain, false],
-      classes: 'e',
+      classes: 'p-4 md:p-8 max-w-[98%] md:max-w-[80%] mx-auto',
+    },
+    {
+      on: [options.noContain, true],
+      classes: '',
     },
   ]
 }

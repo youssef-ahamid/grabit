@@ -5,10 +5,10 @@ export const carrouselItemWrapper = props => {
       styles: '',
       on: true, // default
     },
-    { 
-      classes: '', 
-      styles: '', 
-      on: props.type == 'primary' 
+    {
+      classes: '',
+      styles: '',
+      on: props.type == 'primary',
     },
   ]
 }
@@ -20,10 +20,10 @@ export const carrouselItemThumbnail = props => {
       styles: '',
       on: true, // default
     },
-    { 
-      classes: '', 
-      styles: '', 
-      on: props.type == 'primary' 
+    {
+      classes: '',
+      styles: '',
+      on: props.type == 'primary',
     },
   ]
 }
@@ -35,10 +35,10 @@ export const carrouselItemInfoContainer = props => {
       styles: '',
       on: true, // default
     },
-    { 
-      classes: '', 
-      styles: '', 
-      on: props.type == 'primary' 
+    {
+      classes: '',
+      styles: '',
+      on: props.type == 'primary',
     },
   ]
 }
@@ -50,10 +50,10 @@ export const carrouselItemLogos = props => {
       styles: '',
       on: true, // default
     },
-    { 
-      classes: '', 
-      styles: '', 
-      on: props.type == 'primary' 
+    {
+      classes: '',
+      styles: '',
+      on: props.type == 'primary',
     },
   ]
 }
@@ -65,10 +65,10 @@ export const carrouselItemLogo = props => {
       styles: '',
       on: true, // default
     },
-    { 
-      classes: '', 
-      styles: '', 
-      on: props.type == 'primary' 
+    {
+      classes: '',
+      styles: '',
+      on: props.type == 'primary',
     },
   ]
 }

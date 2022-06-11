@@ -4,10 +4,8 @@
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  x="0px"
-  y="0px"
   viewBox="0 0 27 27"
-  class={`transition duration-300 ease-out fill-current w-full h-auto ${className}`}
+  class={`transition duration-300 ease-out fill-current h-auto ${className}`}
 >
   <path
     d="M23.625 11.25V4.5C23.625 3.2625 22.6125 2.25 21.375 2.25H3.375C2.1375 2.25 1.13625 3.2625 1.13625 4.5L1.125 18C1.125 19.2375 2.1375 20.25 3.375 20.25H15.75V14.625C15.75 12.7575 17.2575 11.25 19.125 11.25H23.625ZM12.375 12.375L3.375 6.75V4.5L12.375 10.125L21.375 4.5V6.75L12.375 12.375Z"
