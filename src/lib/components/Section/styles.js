@@ -40,7 +40,7 @@ export const slotContent = props => {
       on: true,
     },
     {
-      classes: 'justify-center items-center space-y-8',
+      classes: 'justify-center items-center space-y-2 md:space-y-8',
       on: props.layout == 'center',
     },
     {
