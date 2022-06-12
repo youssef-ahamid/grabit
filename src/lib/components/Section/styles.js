@@ -36,7 +36,7 @@ export const section = props => {
 export const slotContent = props => {
   return [
     {
-      classes: 'mt-6',
+      classes: 'mt-12',
       on: true,
     },
     {
@@ -48,8 +48,12 @@ export const slotContent = props => {
       on: props.layout == 'twoColumn',
     },
     {
-      classes: 'flex flex-col md:flex-row justify-around items-stretch md:space-x-4 my-40',
+      classes: 'flex flex-col md:flex-row md:flex-wrap justify-around items-stretch space-y-4 md:space-x-4 my-40',
       on: props.contentLayout == 'twoColumn',
+    },
+    {
+      classes: 'grid grid-cols-1 md:grid-cols-2 md:grid-rows-2 gap-4',
+      on: props.contentLayout == 'grid',
     },
   ]
 }

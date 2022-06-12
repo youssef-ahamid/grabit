@@ -27,6 +27,7 @@ export const sectionQuery = `
       __typename
       text
       title
+      subtitle
       image {
         url
       }

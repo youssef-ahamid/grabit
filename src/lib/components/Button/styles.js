@@ -2,7 +2,7 @@ export const button = (props) => {
   return [
     {
       classes:
-        "relative my-1 flex items-center justify-center rounded-xl transition-300 group",
+        "relative my-1 flex items-center justify-center rounded-xl transition-300 group active:scale-95",
       styles: "",
       on: true, // default
     },

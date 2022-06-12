@@ -5,7 +5,7 @@ export const imgWrapper = props => {
       on: true,
     },
     {
-      classes: 'max-w-[60px] md:max-w-[100px]',
+      classes: 'max-w-[40px]',
       styles: '',
       on: props.size == 'sm',
     },
