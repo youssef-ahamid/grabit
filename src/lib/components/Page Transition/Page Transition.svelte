@@ -18,7 +18,7 @@
 
 {#if !isPageLoaded || start}
   <div
-    class="fixed w-screen h-screen inset-0 z-[9999] bg-neutral-light flex flex-col items-center justify-center"
+    class="fixed w-screen h-screen inset-0 z-[9999] bg-neutralLight flex flex-col items-center justify-center"
     in:slide={{ duration: 300 }}
     out:slide={{ duration: 500, delay: 1400 }}
   >
@@ -39,7 +39,7 @@
       class="h-4 w-full flex justify-center transition duration-300 ease-out mt-6"
     >
       <h2
-        class="animate-pulse text-neutral-dark text-center mx-auto max-w-[90%] md:max-w-md"
+        class="animate-pulse text-neutralDark text-center mx-auto max-w-[90%] md:max-w-md"
       >
         <slot />
       </h2>

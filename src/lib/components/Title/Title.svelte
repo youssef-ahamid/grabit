@@ -1,16 +1,15 @@
 <script>
+  
   /* props */
   export let className = '' // *, custom wrapper classes
   export let line = true
-
+  export let lineColor = 'brand'
+  export let layout = 'default'
+  
   /* styles */
-  import { config } from './styles'
-  $: classes = config()
+  import { stylus } from '$lib/helpers';
+  import { titleText } from './styles'
+  $: tit = stylus(titleText({ line, layout, lineColor }))
 </script>
 
-<div class={`${classes.titleWrapper} ${className}`}>
-  {#if line}
-    <div class={classes.line} />
-  {/if}
-  <h1 class={classes.title}><slot /></h1>
-</div>
+<h2 class={`${tit.classes} ${className}`}><slot /></h2>

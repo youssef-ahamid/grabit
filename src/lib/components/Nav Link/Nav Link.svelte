@@ -64,7 +64,7 @@
       <Go {...link}>
         <p class={`${sublink.classes}`}>
           {link.text}
-          <Arrow className="text-neutral-light w-5" />
+          <Arrow className="text-neutralLight w-5" />
         </p>
       </Go>
     </List>

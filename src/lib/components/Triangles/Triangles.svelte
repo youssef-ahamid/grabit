@@ -4,7 +4,7 @@
 
 <div class="overflow-visible hidden lg:block">
   <div
-    class="scale-75 origin-bottom-right absolute -right-6 md:-right-6 -top-12 z-[-1] w-48 md:w-64 text-neutral-light group-focus-within:translate-x-12 group-hover:translate-x-12 group-focus-within:-translate-y-12 group-hover:-translate-y-12 transition duration-300 ease-out"
+    class="scale-75 origin-bottom-right absolute -right-6 md:-right-6 -top-12 z-[-1] w-48 md:w-64 text-neutralLight group-focus-within:translate-x-12 group-hover:translate-x-12 group-focus-within:-translate-y-12 group-hover:-translate-y-12 transition duration-300 ease-out"
   >
     <Triangle
       width={200}

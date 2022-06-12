@@ -54,7 +54,7 @@ export let title = options => {
   return [
     {
       classes:
-        'select-none text-neutral-light text-4xl md:text-5xl md:translate-y-1 -translate-x-4 one-liner absolute left-8 md:left-10 uppercase transition duration-300 ease-out origin-top-left w-[70%] leading-8 scale-[50%] top-8 z-20 text-left group-focus-within:scale-[60%] group-hover:scale-[60%] md:max-w-[150px]',
+        'select-none text-neutralLight text-4xl md:text-5xl md:translate-y-1 -translate-x-4 one-liner absolute left-8 md:left-10 uppercase transition duration-300 ease-out origin-top-left w-[70%] leading-8 scale-[50%] top-8 z-20 text-left group-focus-within:scale-[60%] group-hover:scale-[60%] md:max-w-[150px]',
     },
     {
       classes: 'scale-[60%]',
@@ -71,7 +71,7 @@ export let content = options => {
   return [
     {
       classes:
-        'p-2 w-4/5 z-20 absolute -bottom-5 justify-end transition duration-500 ease-out text-left group-focus-within:translate-x-4 group-hover:translate-x-4 text-neutral-light',
+        'p-2 w-4/5 z-20 absolute -bottom-5 justify-end transition duration-500 ease-out text-left group-focus-within:translate-x-4 group-hover:translate-x-4 text-neutralLight',
     },
     {
       classes: 'translate-x-4',

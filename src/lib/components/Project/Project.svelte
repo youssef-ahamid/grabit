@@ -49,7 +49,7 @@
     <h3
       class="uppercase {color == 'secondary'
         ? 'text-primary'
-        : 'text-neutral-light'}"
+        : 'text-neutralLight'}"
     >
       {preheader}
     </h3>
@@ -66,7 +66,7 @@
         to={cta.link}
         className="{color == 'secondary'
           ? 'text-primary'
-          : 'text-neutral-light'} mt-5 md:mt-10 block"
+          : 'text-neutralLight'} mt-5 md:mt-10 block"
       >
         <Button {...cta} />
       </Go>

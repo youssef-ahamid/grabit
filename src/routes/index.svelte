@@ -1,8 +1,23 @@
-<h1>header 1</h1>
-<h2>header 2</h2>
-<h3>h3</h3>
+<script>
+  import Image from '$lib/components/Image/Image.svelte'
 
-<p class="body-sm">p body sm</p>
-<p>p</p>
-<p class="body-lg">p body lg</p>
-<p class="body-xl">p body xl</p>
+  import Section from '$lib/components/Section/Section.svelte'
+
+  import { pages } from '$lib/stores'
+
+  let page = $pages.home
+  let sections = []
+  console.log(page.sections)
+</script>
+
+{#each page.sections as section, i}
+  <Section {...section} bind:this={sections[i]}>
+    {#each section.content as component}
+      {#if component.__typename == 'Image'}
+        <Image alt={component.alt} src={component.image.url} className="mx-auto" />
+      {/if}
+    {/each}
+  </Section>
+{/each}
+
+<div class="bg-brand bg-brandLight bg-brandDark bg-neutralLight before:bg-neutralLight before:bg-brand before:bg-neutralDark bg-neutral bg-neutralDark text-brand text-brandLight text-brandDark text-neutralLight text-neutral text-neutralDark"></div>

@@ -1,31 +1,29 @@
 <script>
   import { site } from '$lib/config'
 
-  export let descriptionText = ''
+  export let description = ''
   export let title = ''
-  export let previewImage
-  if (!previewImage)
-    previewImage = {
+  export let image
+  if (!image)
+    image = {
       url: site.mainImage,
     }
 
-  const pageTitle = `${site.title} ${
-    title != '' && !!title ? `| ${title}` : ''
-  }`
+  const pageTitle = title || site.title
 </script>
 
 <svelte:head>
   <title>{pageTitle}</title>
-  <meta name="description" content={descriptionText} />
+  <meta name="description" content={description} />
   <meta name="title" content={pageTitle} />
-  <meta name="image" content={previewImage.url} />
+  <meta name="image" content={image.url} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="<{site.url}>" />
   <meta property="og:title" content={pageTitle} />
-  <meta property="og:description" content={descriptionText} />
-  <meta property="og:image" content={previewImage.url} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={image.url} />
 
   <meta
     name="robots"

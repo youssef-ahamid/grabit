@@ -16,7 +16,7 @@ export let logoInner =
 export let logoOuter =
   'group-hover:scale-105 origin-center group-active:scale-110'
 export let copyright =
-  'body-sm font-extralight text-right w-full bg-secondary text-neutral-light p-1 absolute bottom-0'
+  'body-sm font-extralight text-right w-full bg-secondary text-neutralLight p-1 absolute bottom-0'
 
 export const config = () => {
   return {

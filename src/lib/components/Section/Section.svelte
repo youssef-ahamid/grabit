@@ -1,15 +1,25 @@
+<svelte:options accessors={true} />
+
 <script>
   export let className = ''
   export let title = ''
-  export let id = title
-  export let cta = null
-  export let color = ''
-  export let bg = ''
+  export let text = ''
+  export let button = null
+  export let identifier = title
+  export let backgroundColor = ''
+  export let textColor = ''
+  export let backgroundImage = ''
+  export let layout = 'default'
   export let gradient = ''
   export let noContain = false
   export let fullHeight = false
+  export let content = {}
 
-  import { activeSection } from '$lib/stores'
+  import { getComponentData, stylus } from '$lib/helpers'
+  export const get = key => {
+    return getComponentData(content, key)
+  }
+
   import { inView } from '$lib/actions'
 
   import { createEventDispatcher } from 'svelte/internal'
@@ -17,7 +27,6 @@
 
   const enter = () => {
     dispatch('enter')
-    if (color != '') $activeSection = { color, id, title }
   }
 
   import Title from '$lib/components/Title/Title.svelte'
@@ -25,39 +34,80 @@
   import Button from '$lib/components/Button/Button.svelte'
 
   /* styles */
-  import { config } from './styles'
-  $: classes = config({ noContain, fullHeight })
+  import {
+    section,
+    mainContent,
+    slotContent,
+    ctaContainer,
+    textContent,
+  } from './styles'
+  $: wrapper = stylus(
+    section({
+      backgroundColor,
+      textColor,
+      backgroundImage,
+      gradient,
+      noContain,
+      fullHeight,
+      layout
+    })
+  )
+  $: content = stylus(
+    mainContent({
+      layout,
+      textColor,
+    })
+  )
+  $: slot_content = stylus(
+    slotContent({
+      layout,
+    })
+  )
+  $: cta_container = stylus(
+    ctaContainer({
+      layout,
+    })
+  )
+  $: text_content = stylus(
+    textContent({
+      layout,
+    })
+  )
 
   let height = 0
 </script>
 
 <svelte:window bind:innerHeight={height} />
 
+<!-- svelte-ignore component-name-lowercase -->
 <section
   use:inView={{ bottom: height }}
   on:enter={enter}
-  class={`${classes.section} ${className}`}
-  {id}
-  style={`background-image: ${
-    gradient ? `${gradient},` : ''
-  } url(${bg});`}
+  class={`${wrapper.classes} ${className}`}
+  style={wrapper.styles}
+  id={identifier}
 >
-  <Title line={title.length > 0}>{title}</Title>
-  <div class={classes.content}>
-    <slot />
-    {#if cta}
-      <div class={classes.ctaContainer}>
-        <Go to={cta.link}>
+  <div class={content.classes}>
+    <Title {layout} lineColor={backgroundColor == 'neutral'? 'brand': 'current'} line={title.length > 0}>{title}</Title>
+    {#if !!text}
+      <p class={text_content.classes}>{text}</p>
+    {/if}
+    {#if button}
+      <div class={cta_container.classes}>
+        <Go to={button.link}>
           <Button
-            label={cta.label}
-            type={cta.type}
-            shape={cta.shape}
-            icon={cta.icon}
-            reverse={cta.reverse}
-            className={cta.className}
+            label={button.label}
+            type={button.type}
+            shape={button.shape}
+            icon={button.icon}
+            reverse={button.reverse}
+            className={button.className}
           />
         </Go>
       </div>
     {/if}
+  </div>
+  <div class={slot_content.classes}>
+    <slot {get} {layout} />
   </div>
 </section>

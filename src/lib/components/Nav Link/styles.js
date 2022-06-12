@@ -8,12 +8,12 @@ export const navLinkWrapper = props => {
     },
     {
       classes:
-        'hover:bg-primary hover:opacity-[75%] hover:text-neutral-light',
+        'hover:bg-primary hover:opacity-[75%] hover:text-neutralLight',
       styles: '',
       on: props.type == 'primary' && !props.sublink,
     },
     {
-      classes: 'bg-primary text-neutral-light',
+      classes: 'bg-primary text-neutralLight',
       styles: '',
       on: props.active,
     },
@@ -53,7 +53,7 @@ export const navSublinkList = props => {
 export const navSublink = props => {
   return [
     {
-      classes: 'text-neutral-light slide-underline flex justify-between items-center',
+      classes: 'text-neutralLight slide-underline flex justify-between items-center',
       styles: '',
       on: true, // default
     },

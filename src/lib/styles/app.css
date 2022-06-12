@@ -23,7 +23,7 @@
   }
 
   button {
-    @apply font-body font-bold text-base md:text-xl;
+    @apply font-body font-bold text-base md:text-lg;
   }
 
   .body-sm {
@@ -58,11 +58,11 @@
 
 /* base */
 html {
-  @apply scroll-smooth;
+  @apply scroll-smooth bg-neutral;
 }
 
 body {
-  @apply overflow-x-hidden max-w-[100vw] leading-snug md:leading-snug tracking-[0.1px] md:tracking-[0.2px] text-neutral-dark;
+  @apply overflow-x-hidden max-w-[100vw] leading-snug md:leading-snug tracking-[0.1px] md:tracking-[0.2px] text-neutralDark;
 }
 
 @layer utilities {

@@ -11,7 +11,7 @@ export const modalWrapper = props => {
 export const modal = props => {
     return [
         {
-            classes: 'max-h-fit max-w-fit flex-1 overflow-hidden rounded-3xl bg-neutral-light p-12 text-secondary md:max-w-xl md:rounded-[50px] md:p-20',
+            classes: 'max-h-fit max-w-fit flex-1 overflow-hidden rounded-3xl bg-neutralLight p-12 text-secondary md:max-w-xl md:rounded-[50px] md:p-20',
             styles: '',
             on: true, // default
         }

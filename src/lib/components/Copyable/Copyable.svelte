@@ -36,7 +36,7 @@
   >
     {#if copied}
       <svg
-        class="stroke-current text-neutral-light inline-block rounded-xl w-6 -mt-2 mr-2"
+        class="stroke-current text-neutralLight inline-block rounded-xl w-6 -mt-2 mr-2"
         stroke-width="3"
         stroke-miterlimit="20"
         stroke-dashoffset="0"
@@ -49,13 +49,13 @@
         /></svg
       >
       <p
-        class="font-bold text-neutral-light leading-none whitespace-nowrap"
+        class="font-bold text-neutralLight leading-none whitespace-nowrap"
         in:fade={{ duration: 300 }}
       >
         copied to clipboard
       </p>
     {:else}
-      <p class="font-bold text-neutral-light leading-none">copy</p>
+      <p class="font-bold text-neutralLight leading-none">copy</p>
     {/if}
   </div>
 </div>

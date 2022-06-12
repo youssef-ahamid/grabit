@@ -1,5 +1,5 @@
 <script>
-  export let color = 'neutral-light'
+  export let color = 'neutralLight'
   export let className = ''
 </script>
 

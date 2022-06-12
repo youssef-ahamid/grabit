@@ -1,27 +1,15 @@
-import { resolve } from '$lib/helpers'
-
-export let titleWrapper = props => {
-  return [{ classes: '' }]
-}
-
-export let line = props => {
+export const titleText = (props) => {
   return [
     {
-      classes: '',
+      classes:
+        `relative pt-6 md:pt-12 max-w-lg mt-6 max-w-fit`,
+      on: true,
     },
-  ]
-}
-
-export let title = props => {
-  return [{ classes: '' }]
-}
-
-let options
-export const config = props => {
-  options = props
-  return {
-    titleWrapper: resolve(titleWrapper(options)),
-    line: resolve(line(options)),
-    title: resolve(title(options)),
-  }
-}
+    {
+      classes:
+        `before:bg-${props.lineColor} before:h-1 before:w-full before:max-w-[70%] before:absolute before:top-0 before:rounded-full`,
+      on: props.line,
+    },
+    { classes: "before:left-1/2 before:-translate-x-1/2 text-center mx-auto", on: props.layout == 'center' },
+  ];
+};

@@ -16,11 +16,11 @@ export let iconWrapper = options => {
     },
     {
       on: [options.type, 'primary'],
-      classes: 'bg-neutral-light text-primary',
+      classes: 'bg-neutralLight text-primary',
     },
     {
       on: [options.type, 'secondary'],
-      classes: 'bg-primary text-neutral-light',
+      classes: 'bg-primary text-neutralLight',
     },
   ]
 }
@@ -79,7 +79,7 @@ export let nav = options => {
   return [
     {
       classes:
-        'fixed lg:absolute lg:mt-8 lg:flex lg:justify-end lg:bg-white ring ring-primary -ml-1 lg:ml-0 lg:ring-transparent transition duration-500 ease-out top-0 left-0 bottom-0 lg:bottom-auto lg:translate-x-0 lg:right-0 w-full p-4 z-[998] bg-neutral-light',
+        'fixed lg:absolute lg:mt-8 lg:flex lg:justify-end lg:bg-white ring ring-primary -ml-1 lg:ml-0 lg:ring-transparent transition duration-500 ease-out top-0 left-0 bottom-0 lg:bottom-auto lg:translate-x-0 lg:right-0 w-full p-4 z-[998] bg-neutralLight',
     },
     {
       on: [options.active, true],

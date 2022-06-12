@@ -15,7 +15,7 @@
     window.scrollTo(0, 0)
   }
 
-  if (!styleOptions.type) styleOptions.type = 'neutral-light'
+  if (!styleOptions.type) styleOptions.type = 'neutralLight'
 
   import List from '$lib/components/List/List.svelte'
   import NavLink from '$lib/components/Nav Link/Nav Link.svelte'

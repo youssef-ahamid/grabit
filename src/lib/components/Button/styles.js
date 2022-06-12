@@ -17,7 +17,7 @@ export const button = (props) => {
       on: props.shape == "ghost",
     },
     {
-      classes: "bg-neutral-light",
+      classes: "bg-neutralLight",
       styles: "",
       on: props.shape == "default" && props.type == "primary",
     },
@@ -32,7 +32,7 @@ export const button = (props) => {
       on: props.type == "primary",
     },
     {
-      classes: "text-neutral-light",
+      classes: "text-neutralLight",
       styles: "",
       on: props.type == "secondary",
     },
