@@ -7,7 +7,7 @@ export const titleText = (props) => {
     },
     {
       classes:
-        `before:bg-${props.lineColor} before:h-1 before:w-full before:max-w-[70%] before:absolute before:top-0 before:rounded-full`,
+        `before:bg-${props.lineColor} before:h-1 before:w-full before:max-w-[40%] before:absolute before:top-0 before:rounded-full`,
       on: props.line,
     },
     { classes: "before:left-1/2 before:-translate-x-1/2 text-center mx-auto", on: props.layout == 'center' },
