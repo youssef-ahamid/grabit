@@ -36,9 +36,14 @@ export let list = (props) => {
 export let listItem = (props) => {
   return [
     {
-      classes: "block",
+      classes: "block py-1 font-light",
       styles: "",
       on: true, // default
+    },
+    {
+      classes: "before:content-['→'] before:font-bold before:absolute before:-left-8 before:top-1 before:body-sm ml-8 relative",
+      styles: "",
+      on: props.type == "arrow", // default
     },
   ];
 };

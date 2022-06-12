@@ -10,6 +10,9 @@
   export let textColor = ''
   export let backgroundImage = ''
   export let layout = 'default'
+  export let contentLayout = 'default'
+
+  console.log(contentLayout)
   export let gradient = ''
   export let noContain = false
   export let fullHeight = false
@@ -41,6 +44,7 @@
     ctaContainer,
     textContent,
   } from './styles'
+  import Animateonenterview from '../Animate On Enter View/animate on enter view.svelte'
   $: wrapper = stylus(
     section({
       backgroundColor,
@@ -49,7 +53,7 @@
       gradient,
       noContain,
       fullHeight,
-      layout
+      layout,
     })
   )
   $: content = stylus(
@@ -61,6 +65,7 @@
   $: slot_content = stylus(
     slotContent({
       layout,
+      contentLayout,
     })
   )
   $: cta_container = stylus(
@@ -88,23 +93,36 @@
   id={identifier}
 >
   <div class={content.classes}>
-    <Title {layout} lineColor={backgroundColor == 'neutral'? 'brand': 'current'} line={title.length > 0}>{title}</Title>
+    <Animateonenterview type="flyRight">
+      <Title
+        {layout}
+        lineColor={backgroundColor == 'neutral' ||
+        backgroundColor == 'neutralLight'
+          ? 'brand'
+          : 'current'}
+        line={title.length > 0}>{title}</Title
+      >
+    </Animateonenterview>
     {#if !!text}
-      <p class={text_content.classes}>{text}</p>
+      <Animateonenterview type="flyRight" delay={200}>
+        <p class={text_content.classes}>{text}</p>
+      </Animateonenterview>
     {/if}
     {#if button}
-      <div class={cta_container.classes}>
-        <Go to={button.link}>
-          <Button
-            label={button.label}
-            type={button.type}
-            shape={button.shape}
-            icon={button.icon}
-            reverse={button.reverse}
-            className={button.className}
-          />
-        </Go>
-      </div>
+      <Animateonenterview type="flyUp" delay={600}>
+        <div class={cta_container.classes}>
+          <Go to={button.link}>
+            <Button
+              label={button.label}
+              type={button.type}
+              shape={button.shape}
+              icon={button.icon}
+              reverse={button.reverse}
+              className={button.className}
+            />
+          </Go>
+        </div>
+      </Animateonenterview>
     {/if}
   </div>
   <div class={slot_content.classes}>

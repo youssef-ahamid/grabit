@@ -12,6 +12,7 @@ export const sectionQuery = `
     shape
     type
   }
+  contentLayout
   content {
     ... on Button {
       __typename
@@ -35,6 +36,7 @@ export const sectionQuery = `
       icon
       infoItem
       title
+      type
     }
     ... on Image {
       __typename

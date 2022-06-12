@@ -2,17 +2,17 @@ export const button = (props) => {
   return [
     {
       classes:
-        "relative my-1 flex items-center justify-center rounded-xl py-4 transition-300 group",
+        "relative my-1 flex items-center justify-center rounded-xl transition-300 group",
       styles: "",
       on: true, // default
     },
     {
-      classes: "hover:scale-105 hover:shadow-lg px-6 md:px-8",
+      classes: "hover:scale-105 hover:shadow-lg px-6 md:px-8 py-4",
       styles: "",
       on: props.shape == "default",
     },
     {
-      classes: "slide-underline",
+      classes: "slide-underline py-1",
       styles: "",
       on: props.shape == "ghost",
     },

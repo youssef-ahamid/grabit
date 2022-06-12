@@ -19,7 +19,6 @@
 <div class={`${wrapper.classes} ${className}`} on:click>
   {#if !!title}
     <div class={header.classes}>
-      <h4>{title}</h4>
       {#if !!icon}
         <span class={cIcon.classes} style={cIcon.styles}>
           {#if typeof icon === 'string'}
@@ -31,7 +30,9 @@
           {/if}
         </span>
       {/if}
+      <h3>{title}</h3>
     </div>
   {/if}
   <slot />
+  <slot name="action" />
 </div>

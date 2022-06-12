@@ -7,13 +7,14 @@
   export let styleOptions = {}
   export let horizontal = false // *, true
   export let grid = null // *, true
+  export let type = "none" // *, true
 
   /* styles */
   import { stylus } from '$lib/helpers'
   import { list, listItem } from './styles'
 
-  $: wrapper = stylus(list({ horizontal, grid, ...styleOptions }))
-  $: list_item = stylus(listItem({ horizontal, grid, ...styleOptions }))
+  $: wrapper = stylus(list({ horizontal, grid, type, ...styleOptions }))
+  $: list_item = stylus(listItem({ horizontal, grid, type, ...styleOptions }))
 </script>
 
 <ul

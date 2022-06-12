@@ -36,16 +36,20 @@ export const section = props => {
 export const slotContent = props => {
   return [
     {
-      classes: 'flex flex-col mt-6',
+      classes: 'mt-6',
       on: true,
     },
     {
-      classes: 'justify-center items-center space-y-2 md:space-y-8',
-      on: props.layout == 'center',
+      classes: 'flex flex-col justify-center items-center space-y-2 md:space-y-8',
+      on: props.contentLayout == 'center',
     },
     {
-      classes: 'max-w-[90%] md:max-w-[50%]',
+      classes: 'max-w-[90%] md:max-w-[45%]',
       on: props.layout == 'twoColumn',
+    },
+    {
+      classes: 'flex flex-col md:flex-row justify-around items-stretch md:space-x-4 my-40',
+      on: props.contentLayout == 'twoColumn',
     },
   ]
 }
@@ -61,7 +65,7 @@ export const mainContent = props => {
       classes: `text-${props.textColor}`,
     },
     {
-      classes: 'max-w-[95%] md:max-w-[50%] flex flex-col space-y-4',
+      classes: 'max-w-[95%] md:max-w-[45%] flex flex-col space-y-4',
       on: props.layout == 'twoColumn',
     },
   ]

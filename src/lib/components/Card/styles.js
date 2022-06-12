@@ -2,7 +2,7 @@ export const card = (props) => {
   return [
     {
       classes:
-        "rounded-3xl m-2 p-4 md:p-6 transition duration-300 ease-out h-auto",
+        "rounded-xl m-2 p-4 md:p-6 transition-300 shadow-xl h-auto hover:shadow-2xl hover:scale-105 flex flex-col space-y-4 text-left min-w-fit max-w-[24rem] h-full flex flex-col justify-between",
       styles: "",
       on: true, // default
     },
@@ -12,12 +12,12 @@ export const card = (props) => {
       on: props.ring,
     },
     {
-      classes: "text-primary bg-tertiary",
+      classes: "bg-neutral text-neutralDark",
       styles: "",
       on: props.type === "primary",
     },
     {
-      classes: "text-secondary bg-primary",
+      classes: "bg-brand text-neutralLight",
       styles: "",
       on: props.type === "secondary",
     },
@@ -26,18 +26,28 @@ export const card = (props) => {
 export const cardHeader = (props) => {
   return [
     {
-      classes: "flex justify-between items-start",
+      classes: "flex flex-col items-start space-y-4 py-6 mb-6 relative before:absolute before:bottom-0 before:w-[40%] before:h-1 before:rounded-full",
       styles: "",
       on: true, // default
+    },
+    {
+      classes: "before:bg-brand",
+      styles: "",
+      on: props.type === "primary",
     },
   ];
 };
 export const cardIcon = (props) => {
   return [
     {
-      classes: "w-8 h-auto",
+      classes: "w-16 h-auto",
       styles: "",
       on: true, // default
+    },
+    {
+      classes: "text-brand",
+      styles: "",
+      on: props.type == 'primary'
     },
   ];
 };

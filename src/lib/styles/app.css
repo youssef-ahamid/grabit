@@ -19,10 +19,10 @@
   }
 
   p {
-    @apply font-body font-light max-w-[52ch] text-lg md:text-2xl;
+    @apply font-body font-light max-w-[52ch] text-base md:text-xl;
   }
 
-  button {
+  button p {
     @apply font-body font-bold text-base md:text-lg;
   }
 
