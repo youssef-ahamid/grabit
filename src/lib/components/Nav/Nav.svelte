@@ -8,6 +8,8 @@
   export let className = '' // *, custom wrapper classes
   export let styleOptions = {}
 
+  import { logoSmall } from '$lib/config';
+
   let y, h
   $: showToTop = y > h * 2
 
@@ -42,10 +44,7 @@
   </div>
   <nav class={`${classes.nav} ${className}`}>
     <Go to="/">
-      <Logo
-        color={'primary'}
-        className="my-8 lg:my-0 w-20 pt-5 left-8 lg:fixed lg:top-4 lg:left-[5%]"
-      />
+      <img {...logoSmall} class="my-8 lg:my-0 w-8 pt-5 left-4 fixed lg:top-4">
     </Go>
     <List items={links} let:prop={item} className={classes.links}>
       <NavLink

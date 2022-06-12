@@ -75,4 +75,7 @@ export const pageQuery = `
   sections {
     ${sectionQuery}
   }
+  hero {
+    ${sectionQuery}
+  }
 `;

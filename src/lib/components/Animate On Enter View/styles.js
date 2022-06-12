@@ -2,8 +2,13 @@ export const animationWrapper = props => {
   return [
     {
       classes:
-        'transition duration-700 ease-out delay-100 oveflow-hidden',
+        `transition ease-out oveflow-hidden`,
+        styles: `transition-duration: ${props.duration || 700}ms !important;`,
       on: true,
+    },
+    {
+      styles: `transition-delay: ${props.delay}ms !important;`,
+      on: props.intersecting,
     },
     {
       classes: 'opacity-0',

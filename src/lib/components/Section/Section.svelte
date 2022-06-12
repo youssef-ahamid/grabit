@@ -11,8 +11,6 @@
   export let backgroundImage = ''
   export let layout = 'default'
   export let contentLayout = 'default'
-
-  console.log(contentLayout)
   export let gradient = ''
   export let noContain = false
   export let fullHeight = false

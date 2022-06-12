@@ -1,14 +1,7 @@
 <script>
-  import { getComponentData } from '$lib/helpers'
-
   /* props */
   export let links = []
-  export let content
-
-  let contactInformation = getComponentData(
-    content,
-    'ContactInformation'
-  ).contact
+  export let contactInformation = {}
 
   export let copyright =
     'Copyright forever and ever by Samurai Software House'

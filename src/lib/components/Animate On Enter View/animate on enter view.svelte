@@ -1,6 +1,7 @@
 <script>
   export let type = 'fade'
   export let delay = 0
+  export let duration = 700
   export let className = ''
   export let styles = ''
   export let noExit = false
@@ -29,14 +30,12 @@
   import { stylus } from '$lib/helpers'
   import { animationWrapper } from './styles'
 
-  $: wrapper = stylus(animationWrapper({ type, intersecting }))
+  $: wrapper = stylus(animationWrapper({ type, intersecting, duration, delay }))
 </script>
 
 <div
   use:inView={{ bottom: 20 }}
-  style="{styles} {intersecting
-    ? `transition-delay: ${delay}ms`
-    : ''}"
+  style={wrapper.styles}
   on:enter={enter}
   on:exit={exit}
   class={`${wrapper.classes} ${className}`}

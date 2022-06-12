@@ -19,10 +19,26 @@
   }
 
   import { pages } from '$lib/stores'
+  import { logo } from '$lib/config'
 
   let page = $pages.home
-  console.log(page.sections)
 </script>
+
+<div class="w-full min-h-screen flex items-center justify-between">
+  <div class="w-full max-w-[45%] md:max-w-[50%] min-h-screen overflow-hidden flex justify-center items-center bg-center bg-cover bg-no-repeat" style="background-image: url({page.hero.backgroundImage.url}) !important;">
+    <Animateonenterview>
+      <img {...logo} class="w-52 md:w-[400px]">
+    </Animateonenterview>
+  </div>
+  <div class="max-w-[50%] md:max-w-[40%] mx-auto">
+    <Animateonenterview type="flyRight" delay={200}>
+    <h1>{page.hero.title}</h1>
+  </Animateonenterview>
+  <Animateonenterview type="flyRight" delay={600}>
+    <p class="body-lg py-2 pr-4">{page.hero.text}</p>
+  </Animateonenterview>
+  </div>
+</div>
 
 {#each page.sections as section, i}
   <Animateonenterview>
@@ -94,6 +110,3 @@
   </Animateonenterview>
 {/each}
 
-<div
-  class="bg-brand bg-brandLight bg-brandDark bg-neutralLight before:bg-neutralLight before:bg-brand before:bg-neutralLight before:bg-current before:bg-neutralDark bg-neutral bg-neutralDark text-brand text-brandLight text-brandDark text-neutralLight text-neutral text-neutralDark"
-/>
