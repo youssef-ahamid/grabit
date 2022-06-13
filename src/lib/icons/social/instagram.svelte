@@ -59,7 +59,7 @@
   /><g
     ><path
       fill="none"
-      class="group-hover:stroke-white stroke-secondary transition duration-300 ease-out"
+      class="group-hover:stroke-white stroke-neutral transition duration-300 ease-out"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-miterlimit="10"
@@ -69,7 +69,7 @@
       cx="31"
       cy="16"
       r="1"
-      class="group-hover:text-white text-secondary fill-current transition duration-300 ease-out"
+      class="group-hover:text-white text-neutral fill-current transition duration-300 ease-out"
     /></g
   ><g
     ><circle
@@ -77,7 +77,7 @@
       cy="24"
       r="6"
       fill="none"
-      class="group-hover:stroke-white stroke-secondary transition duration-300 ease-out"
+      class="group-hover:stroke-white stroke-neutral transition duration-300 ease-out"
       stroke-linecap="round"
       stroke-linejoin="round"
       stroke-miterlimit="10"

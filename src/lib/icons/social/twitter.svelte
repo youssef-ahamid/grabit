@@ -23,7 +23,7 @@
   </g>
   <g id="Logo__x2014__FIXED">
     <path
-      class="fill-current text-secondary group-hover:text-white transition duration-300 ease-out"
+      class="fill-current text-neutral group-hover:text-white transition duration-300 ease-out"
       d="M163.4,305.5c88.7,0,137.2-73.5,137.2-137.2c0-2.1,0-4.2-0.1-6.2c9.4-6.8,17.6-15.3,24.1-25
 		c-8.6,3.8-17.9,6.4-27.7,7.6c10-6,17.6-15.4,21.2-26.7c-9.3,5.5-19.6,9.5-30.6,11.7c-8.8-9.4-21.3-15.2-35.2-15.2
 		c-26.6,0-48.2,21.6-48.2,48.2c0,3.8,0.4,7.5,1.3,11c-40.1-2-75.6-21.2-99.4-50.4c-4.1,7.1-6.5,15.4-6.5,24.2

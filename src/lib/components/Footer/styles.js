@@ -2,7 +2,7 @@ export let footer = 'w-full pb-6 relative'
 export let list =
   'w-full lg:max-w-[70%] px-8 grid grid-cols-2 gap-4 items-start my-6 z-[999]'
 export let links =
-  'w-[80%] mx-auto space-y-12 items-start justify-center md:justify-between flex flex-wrap md:flex-nowrap'
+  'w-[80%] mx-auto space-y-12 md:space-y-0 items-start justify-center md:justify-between flex flex-wrap md:flex-nowrap'
 export let socials =
   'w-[90%] md:w-[95%] mx-auto flex justify-center md:justify-start items-center pt-12'
 export let socialLink =

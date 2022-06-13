@@ -1,10 +1,13 @@
 <script>
   /* props */
   export let contactInformation = {
-    phoneNumber: "+201200525233",
-    email: "zaagel@samuraisoftware.house",
-    address: "4517 Washington Ave. Manchester, Kentucky 39495",
+    phoneNumber: "01023680518",
+    email: "info@newcastle.edu.eg",
+    address: "Al Bashair District, in Al Bashair Service Center 6 October City",
     location: "",
+    instagram: "https://www.instagram.com/newcastleschool.eg/",
+    facebook: "https://www.facebook.com/NCSAmerican/",
+    twitter: "",
   }
 
   export let copyright =
@@ -20,21 +23,23 @@
   import { config, link } from './styles'
   import Copyable from '../Copyable/Copyable.svelte'
   import { groups, links } from '$lib/config'
-  console.log(groups, links)
   import Image from '../Image/Image.svelte'
   import Animateonenterview from '../Animate On Enter View/animate on enter view.svelte'
 import Emailattachment from '$lib/icons/social/email attachment.svelte'
 import Location from '$lib/icons/location.svelte';
 import Phone from '$lib/icons/social/phone.svelte';
+import Instagram from '$lib/icons/social/instagram.svelte'
+import Twitter from '$lib/icons/social/twitter.svelte';
+import Facebook from '$lib/icons/social/facebook.svelte';
   $: classes = config()
 </script>
 
 <Section id="footer" noContain className="bg-neutral">
   <footer class={`${classes.footer} ${className}`}>
     <nav class={classes.links}>
-      <div class="flex flex-wrap md:flex-nowrap space-y-12 items-start justify-start">
+      <div class="flex flex-wrap md:flex-nowrap space-y-12 md:space-y-0 items-start justify-start">
         <div class="h-full">
-          <p class="font-bold pb-4 px-2 md:px-4">School Info</p>
+          <p class="font-bold pb-8 px-2 md:px-4">School Info</p>
           <List
             items={links.filter(link => link.group === 'info')}
             let:item={link}
@@ -52,7 +57,7 @@ import Phone from '$lib/icons/social/phone.svelte';
           </List>
         </div>
         <div class="h-full">
-          <p class="font-bold pb-4 px-2 md:px-4">Useful Links</p>
+          <p class="font-bold pb-8 px-2 md:px-4">Useful Links</p>
           <List
             items={links.filter(link => link.group === 'useful')}
             let:item={link}
@@ -72,16 +77,16 @@ import Phone from '$lib/icons/social/phone.svelte';
       </div>
 
       <div class="flex flex-col min-w-[35%]">
-        <p class="font-bold pb-4 px-2 md:px-4">Get In Touch</p>
+        <p class="font-bold pb-8 px-2 md:px-4">Get In Touch</p>
         <Animateonenterview type="flyUp" className="py-2 my-2" delay="200">
           <Go to="tel:{contactInformation.phoneNumber}" redirect className="flex space-x-2">
-            <Phone className="w-8 text-brand" />
+            <Phone className="w-8 min-w-[2rem] text-brand" />
             <p class="body-sm font-bold hover:text-brand transition-300">{contactInformation.phoneNumber}</p>
           </Go>
         </Animateonenterview>
         <Animateonenterview type="flyUp" className="py-2 my-2" delay="400">
           <div class="flex space-x-2">
-            <Location className="w-8 text-brand" />
+            <Location className="w-8 min-w-[2rem] text-brand" />
             <Go to={contactInformation.location}>
               <p class="body-sm font-bold hover:text-brand transition-300">{contactInformation.address}</p>
             </Go>
@@ -89,7 +94,7 @@ import Phone from '$lib/icons/social/phone.svelte';
         </Animateonenterview>
         <Animateonenterview type="flyUp" className="py-2 my-2" delay="600">
           <div class="flex space-x-2">
-            <Emailattachment className="w-8 text-brand" />
+            <Emailattachment className="w-8 min-w-[2rem] text-brand" />
             <Copyable value={contactInformation.email}>
               <p class="body-sm font-bold hover:text-brand transition-300">{contactInformation.email}</p>
             </Copyable>
@@ -97,6 +102,26 @@ import Phone from '$lib/icons/social/phone.svelte';
         </Animateonenterview>
       </div>
     </nav>
-    <div class={classes.copyright}>{copyright}</div>
+    <div class="w-full max-w-[80%] mt-10 mx-auto flex flex-col items-start justify-between md:flex-row-reverse md:items-center">
+      <div class="flex space-x-4 text-brand">
+        <Animateonenterview type="flyUp" delay="200">
+        <Go to={contactInformation.instagram} redirect>
+          <Instagram className="w-10" />
+        </Go>
+      </Animateonenterview>
+      <Animateonenterview type="flyUp" delay="400">
+        <Go to={contactInformation.twitter} redirect>
+          <Twitter className="w-10" />
+        </Go>
+      </Animateonenterview>
+        <Animateonenterview type="flyUp" delay="600">
+        <Go to={contactInformation.facebook} redirect>
+          <Facebook className="w-10" />
+        </Go>
+      </Animateonenterview>
+      </div>
+      <Animateonenterview type="flyUp" delay="300">
+      <p class="font-medium text-sm text-neutral-500">{copyright}</p>
+    </Animateonenterview>
   </footer>
 </Section>
