@@ -58,7 +58,7 @@
 
 /* base */
 html {
-  @apply scroll-smooth bg-neutral;
+  @apply scroll-smooth bg-neutral overflow-x-hidden max-w-[100vw];
 }
 
 body {

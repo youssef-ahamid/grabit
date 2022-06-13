@@ -79,7 +79,7 @@ export let nav = options => {
   return [
     {
       classes:
-        'fixed bg-brandDark top-0 bottom-0 left-0 w-8 z-[999]',
+        'fixed bg-brandDark top-0 bottom-0 left-0 w-2 md:w-8 z-[999]',
     },
   ]
 }

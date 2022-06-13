@@ -4,7 +4,7 @@ export const section = props => {
     {
       on: true,
       classes:
-        `relative overflow-hidden bg-cover bg-center bg-no-repeat w-full bg-${props.backgroundColor} text-${props.textColor} py-8`,
+        `relative max-w-[100vw] overflow-hidden bg-cover bg-center bg-no-repeat w-full bg-${props.backgroundColor} text-${props.textColor} py-8`,
     },
     {
       on: !props.noContain,
@@ -36,7 +36,7 @@ export const section = props => {
 export const slotContent = props => {
   return [
     {
-      classes: 'mt-12',
+      classes: 'mt-12 max-w-[100vw] overflow-hidden',
       on: true,
     },
     {

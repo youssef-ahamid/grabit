@@ -1,16 +1,16 @@
-export let footer = 'w-full py-24 relative'
+export let footer = 'w-full pb-6 relative'
 export let list =
-  'w-full lg:max-w-[70%] px-8 pt-5 grid grid-cols-2 lg:grid-cols-3 items-start my-6 z-[999]'
+  'w-full lg:max-w-[70%] px-8 grid grid-cols-2 gap-4 items-start my-6 z-[999]'
 export let links =
-  'w-full flex flex-col md:flex-row items-start justify-between px-6 '
+  'w-[80%] mx-auto space-y-12 items-start justify-center md:justify-between flex flex-wrap md:flex-nowrap'
 export let socials =
   'w-[90%] md:w-[95%] mx-auto flex justify-center md:justify-start items-center pt-12'
 export let socialLink =
-  'w-10 h-auto mr-2 block text-primary hover:text-current'
+  'w-10 h-auto mr-2 block text-brand hover:text-current'
 export let link =
-  'px-2 one-liner md:px-4 py-2 md:py-4 text-current hover:text-primary'
+  'whitespace-nowrap py-1 md:py-0 text-current hover:text-brand font-semibold text-sm md:text-base'
 export let logo =
-  'block w-32 overflow-visible py-4 md:w-36 group text-primary hover:scale-105 origin-center'
+  'block w-32 overflow-visible py-4 md:w-36 group text-brand hover:scale-105 origin-center'
 export let logoInner =
   'group-hover:scale-95 group-active:scale-90 origin-center'
 export let logoOuter =

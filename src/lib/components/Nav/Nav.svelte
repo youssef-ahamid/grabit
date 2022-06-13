@@ -44,7 +44,7 @@
   </div>
   <nav class={`${classes.nav} ${className}`}>
     <Go to="/">
-      <img {...logoSmall} class="my-8 lg:my-0 w-8 pt-5 left-4 fixed lg:top-4">
+      <img {...logoSmall} class="my-8 lg:my-0 w-6 md:w-8 pt-5 left-1 md:left-4 fixed lg:top-4">
     </Go>
     <List items={links} let:prop={item} className={classes.links}>
       <NavLink

@@ -32,7 +32,7 @@
     role="tooltip"
     class="{copied
       ? 'bg-opacity-90'
-      : 'bg-opacity-75'} opacity-0 delay-100 translate-y-1 flex justify-center items-center scale-95 peer-hover:scale-100 peer-hover:opacity-100 peer-hover:translate-y-0  peer-active:scale-95 left-1/2 -translate-x-1/2 peer-focus-within:scale-100 peer-focus-within:opacity-100 peer-focus-within:translate-y-0 absolute z-10 bottom-full py-2 px-3 bg-primary rounded-lg shadow-sm transition duration-300"
+      : 'bg-opacity-75'} opacity-0 delay-100 translate-y-1 flex justify-center items-center scale-95 peer-hover:scale-100 peer-hover:opacity-100 peer-hover:translate-y-0  peer-active:scale-95 left-1/2 -translate-x-1/2 peer-focus-within:scale-100 peer-focus-within:opacity-100 peer-focus-within:translate-y-0 absolute z-10 bottom-full py-2 px-3 bg-brand rounded-lg shadow-sm transition duration-300"
   >
     {#if copied}
       <svg

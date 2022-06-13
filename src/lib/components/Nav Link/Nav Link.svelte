@@ -9,6 +9,7 @@
   export let sublinkOpen = false
   export let activeSub = 0
   export let links = []
+  console.log(links)
   export let styleOptions = {}
 
   import Go from '$lib/components/Go/Go.svelte'
@@ -59,7 +60,7 @@
     {/if}
   </p>
 
-  {#if links.length > 0}
+  {#if !!links && links.length > 0}
     <List items={links} let:prop={link} className={list.classes}>
       <Go {...link}>
         <p class={`${sublink.classes}`}>
