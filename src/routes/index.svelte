@@ -1,6 +1,7 @@
 <script>
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   import Section from '$lib/components/Section/Section.svelte'
+  import PageTransition from '$lib/components/Page Transition/Page Transition.svelte';
 
   import Button from '$lib/components/Button/Button.svelte'
   import Card from '$lib/components/Card/Card.svelte'
@@ -22,7 +23,12 @@
   import { logo } from '$lib/config'
 
   let page = $pages.home
+
 </script>
+
+<!-- <PageTransition>
+
+</PageTransition> -->
 
 <div class="w-full min-h-screen flex items-center justify-between">
   <div class="w-full max-w-[45%] md:max-w-[50%] min-h-screen overflow-hidden flex justify-center items-center bg-center bg-cover bg-no-repeat" style="background-image: url({page.hero.backgroundImage.url}) !important;">
@@ -35,7 +41,7 @@
     <h1>{page.hero.title}</h1>
   </Animateonenterview>
   <Animateonenterview type="flyRight" delay={600}>
-    <p class="body-lg py-2 pr-4">{page.hero.text}</p>
+    <p class="body-xl py-2 pr-4">{page.hero.text}</p>
   </Animateonenterview>
   </div>
 </div>

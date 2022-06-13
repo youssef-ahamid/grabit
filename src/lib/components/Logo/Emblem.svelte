@@ -1,17 +1,13 @@
-<script>
-  export let className = ''
-</script>
-
 <svg
-  class="w-full h-auto {className}"
-  viewBox="0 0 206 92"
+  class="w-full h-auto"
+  viewBox="0 0 79 92"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <g clip-path="url(#clip0_282_22)">
     <rect
-      x="-105"
+      x="-24"
       y="-17"
       width="393"
       height="126"
@@ -31,7 +27,7 @@
       />
     </pattern>
     <clipPath id="clip0_282_22">
-      <rect width="206" height="92" fill="white" />
+      <rect class="w-full h-auto" fill="white" />
     </clipPath>
     <image
       id="image0_282_22"

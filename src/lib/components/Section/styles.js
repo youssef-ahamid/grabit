@@ -36,7 +36,7 @@ export const section = props => {
 export const slotContent = props => {
   return [
     {
-      classes: 'mt-12 max-w-[100vw] overflow-hidden',
+      classes: 'mt-12',
       on: true,
     },
     {
