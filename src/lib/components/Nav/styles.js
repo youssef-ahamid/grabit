@@ -61,7 +61,7 @@ export let link = options => {
   return [
     {
       classes:
-        'm-2 capitalize text-base lg:text-lg font-medium lg:font-normal max-w-fit lg:max-w-full',
+        'm-1 my-0 capitalize text-base lg:text-lg font-medium lg:font-normal max-w-fit lg:max-w-full',
     },
   ]
 }
@@ -79,8 +79,16 @@ export let nav = options => {
   return [
     {
       classes:
-        'fixed bg-brandDark top-0 bottom-0 left-0 w-2 md:w-8 z-[999]',
+        'fixed bg-brandDark top-0 bottom-0 left-0 min-w-[20rem] max-w-fit z-[999] transition duration-700 ease-out',
     },
+    {
+      classes: "-translate-x-[95%]",
+      on: [options.active, false],
+    },
+    {
+      classes: "translate-x-0",
+      on: [options.active, true],
+    }
   ]
 }
 

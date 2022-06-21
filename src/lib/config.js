@@ -74,6 +74,16 @@ export const links = [
     group: "info",
   },
   {
+    to: "/announcements",
+    text: "Announcements",
+    group: "info",
+  },
+  {
+    to: "/faq",
+    text: "Frequently Asked Questions",
+    group: "info",
+  },
+  {
     to: "/student-portal",
     text: "Student Portal",
     group: "useful",
@@ -84,8 +94,8 @@ export const links = [
     group: "useful",
   },
   {
-    to: "/apply",
-    text: "Apply",
+    to: "/application",
+    text: "Application",
     group: "useful",
   },
 ]

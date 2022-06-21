@@ -1,5 +1,5 @@
 <script context="module">
-  // export const prerender = true
+  export const prerender = true
   import { getPage, graphcms } from '$lib/gql'
 
   export async function load({ url }) {
@@ -29,7 +29,9 @@
 </script>
 
 <SEO {...page.seo} />
-<Nav />
+<Nav 
+  cta={{ label: "apply now", type: "secondary", shape: "default", link: "/application"}}
+/>
 <slot sections={page.sections} />
 <Footer />
 

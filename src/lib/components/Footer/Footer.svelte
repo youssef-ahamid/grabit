@@ -4,10 +4,11 @@
     phoneNumber: "01023680518",
     email: "info@newcastle.edu.eg",
     address: "Al Bashair District, in Al Bashair Service Center 6 October City",
-    location: "",
+    location: "https://goo.gl/maps/UMvCBABmE33AMLXe7",
     instagram: "https://www.instagram.com/newcastleschool.eg/",
     facebook: "https://www.facebook.com/NCSAmerican/",
-    twitter: "",
+    linkedin: " https://www.linkedin.com/company/newcastle-international-school-egypt/",
+    youtube: "https://www.youtube.com/channel/UCVZGSrXLrDmOYm5c9cqmwXg",
   }
 
   export let copyright =
@@ -29,8 +30,9 @@ import Emailattachment from '$lib/icons/social/email attachment.svelte'
 import Location from '$lib/icons/location.svelte';
 import Phone from '$lib/icons/social/phone.svelte';
 import Instagram from '$lib/icons/social/instagram.svelte'
-import Twitter from '$lib/icons/social/twitter.svelte';
+import Linkedin from '$lib/icons/social/linkedin.svelte';
 import Facebook from '$lib/icons/social/facebook.svelte';
+import Youtube from '$lib/icons/social/youtube.svelte';
   $: classes = config()
 </script>
 
@@ -87,7 +89,7 @@ import Facebook from '$lib/icons/social/facebook.svelte';
         <Animateonenterview type="flyUp" className="py-2 my-2" delay="400">
           <div class="flex space-x-2">
             <Location className="w-8 min-w-[2rem] text-brand" />
-            <Go to={contactInformation.location}>
+            <Go to={contactInformation.location} redirect>
               <p class="body-sm font-bold hover:text-brand transition-300">{contactInformation.address}</p>
             </Go>
           </div>
@@ -110,13 +112,18 @@ import Facebook from '$lib/icons/social/facebook.svelte';
         </Go>
       </Animateonenterview>
       <Animateonenterview type="flyUp" delay="400">
-        <Go to={contactInformation.twitter} redirect>
-          <Twitter className="w-10" />
+        <Go to={contactInformation.linkedin} redirect>
+          <Linkedin className="w-10" />
         </Go>
       </Animateonenterview>
-        <Animateonenterview type="flyUp" delay="600">
+      <Animateonenterview type="flyUp" delay="600">
         <Go to={contactInformation.facebook} redirect>
           <Facebook className="w-10" />
+        </Go>
+      </Animateonenterview>
+      <Animateonenterview type="flyUp" delay="600">
+        <Go to={contactInformation.youtube} redirect>
+          <Youtube className="w-12" />
         </Go>
       </Animateonenterview>
       </div>
