@@ -10,7 +10,7 @@
   import List from "$lib/components/List/List.svelte";
   import Quote from "$lib/components/Quote/Quote.svelte";
 
-  import Karnoosh from "$lib/icons/shapes/Karnoosh.svelte";
+  import Karnoosh from "$lib/icons/shape/Karnoosh.svelte";
 
   const components = {
     Button,
