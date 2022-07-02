@@ -38,9 +38,12 @@
     textInputCTA,
   } from './styles'
 
+  let focused = false
+  $: empty = !!!value
+
   $: lbl = stylus(textInputWrapper({ type, clean, ...styleOptions }))
   $: input = stylus(textInput({ type, clean, ...styleOptions }))
-  $: name = stylus(textInputName({ type, clean, ...styleOptions }))
+  $: name = stylus(textInputName({ type, clean, focus: focused, empty, ...styleOptions }))
   $: error = stylus(textInputError({ type, clean, ...styleOptions }))
   $: CTA = stylus(textInputCTA({ type, clean, ...styleOptions }))
 
@@ -54,10 +57,14 @@
   const valid = () => dispatch('valid', value)
   const invalid = () => dispatch('invalid', value)
   const blur = () => {
+    focused = false
     validate()
     dispatch('blur', value)
   }
-  const focus = () => dispatch('focus', value)
+  const focus = () => {
+    focused = true
+    dispatch('focus', value)
+  }
   const submit = () => dispatch('submit', value)
   const change = () => {
     if (validateOnChange) validate()
@@ -68,16 +75,15 @@
 <label for={label} class={`${lbl.classes} + ${className}`}>
   <p class={name.classes}>
     {label}
-    {#if validations && validations
-        .map(_ => _.type)
-        .includes('required')}
-      *
+    {#if validations && validations.includes('required')}
+      <span transition:scale class="inline-block">*</span>
     {/if}
   </p>
   {#if type === 'text'}
     <input id={label}
       bind:value
       {placeholder}
+      type="text"
       name={label}
       class={input.classes}
       on:focus={focus}

@@ -28,9 +28,19 @@
   import Footer from '$lib/components/Footer/Footer.svelte'
 </script>
 
-<SEO {...page.seo} />
-<Nav 
-  cta={{ label: "apply now", type: "secondary", shape: "default", link: "/application"}}
+{#if !!page.seo}
+  <SEO {...page.seo} />
+{/if}
+
+<Nav
+  cta={slug != 'application'
+    ? {
+        label: 'apply now',
+        type: 'secondary',
+        shape: 'default',
+        link: '/application',
+      }
+    : null}
 />
 <slot sections={page.sections} />
 <Footer />

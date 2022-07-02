@@ -17,17 +17,17 @@ export const textInput = props => {
   return [
     {
       classes:
-        'block outline-none appearance-none py-3 px-7 transition placeholder:text-gray-300 caret-primary placeholder:font-light duration-300 ease-out ring-2 ring-neutralLight shadow-inner ring-offset-primary ring-offset-2 rounded-full bg-neutralLight focus:ring-offset-4 text-neutralDark w-full placeholder:text-left',
+        'block outline-none appearance-none py-3 px-4 transition-300 placeholder:text-gray-300 caret-brand placeholder:font-light border-b-2 border-neutralDark shadow-inner rounded-t-md bg-neutral focus:bg-brand focus:bg-opacity-[20%] focus:border-brand text-neutralDark w-full placeholder:text-left',
       styles: '',
       on: true, // default
     },
     {
       on: props.clean === false,
-      classes: 'border-red-300',
+      classes: 'bg-brandDark bg-opacity-[40%]',
     },
     {
       on: props.clean === true,
-      classes: 'border-primary',
+      classes: 'bg-opacity-[80%]',
     },
     {
       on: props.type === 'text area',
@@ -44,14 +44,19 @@ export const textInput = props => {
 export const textInputName = props => {
   return [
     {
-      classes: 'text-primary',
+      classes: 'absolute capitalize font-bold left-2 bottom-2 transition-300',
       styles: '',
       on: true, // default
     },
     {
-      classes: '',
+      classes: '-translate-x-4 -translate-y-12 opacity-100 scale-75 text-brand',
       styles: '',
-      on: props.type === 'primary',
+      on: props.focus || !props.empty,
+    },
+    {
+      classes: 'opacity-50',
+      styles: '',
+      on: !props.focus && props.empty,
     },
   ]
 }
@@ -59,7 +64,7 @@ export const textInputName = props => {
 export const textInputError = props => {
   return [
     {
-      classes: 'text-red-500',
+      classes: 'text-red-500 absolute top-full',
       styles: '',
       on: true, // default
     },
