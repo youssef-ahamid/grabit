@@ -30,6 +30,7 @@
     if (index === 0) return "left: -3rem !important; top: -3rem !important;";
     else if (index === 2)
       return "right: -3rem !important; bottom: -3rem !important;";
+    else return "display: none !important;";
   };
 </script>
 
@@ -92,7 +93,7 @@
             <Quote {...component} />
           {:else if component.__typename == "InfoCard"}
             <Karnoosh
-              className="w-24 absolute text-brand"
+              className="w-32 md:w-40 z-0 absolute text-brand"
               styles={computeKarnooshPosition(i)}
             />
             <Card {...component}>
