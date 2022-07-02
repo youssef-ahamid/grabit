@@ -57,6 +57,7 @@ export const sectionQuery = `
     }
   }
   text
+  boldDescription
   textColor
   title
   layout

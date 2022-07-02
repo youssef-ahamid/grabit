@@ -85,6 +85,10 @@ export const textContent = props => {
       on: props.layout == 'center',
       classes: 'mx-auto',
     },
+    {
+      on: props.boldDescription,
+      classes: 'font-bold',
+    },
   ]
 }
 

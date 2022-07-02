@@ -4,6 +4,7 @@
   export let className = ''
   export let title = ''
   export let text = ''
+  export let boldDescription = false
   export let button = null
   export let identifier = title
   export let backgroundColor = ''
@@ -74,6 +75,7 @@
   $: text_content = stylus(
     textContent({
       layout,
+      boldDescription,
     })
   )
 

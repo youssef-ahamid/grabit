@@ -30,19 +30,22 @@
 
 </PageTransition> -->
 
-<div class="w-full min-h-screen flex items-center justify-between">
-  <div class="w-full max-w-[45%] md:max-w-[50%] min-h-screen overflow-hidden flex justify-center items-center bg-center bg-cover bg-no-repeat" style="background-image: url({page.hero.backgroundImage.url}) !important;">
-    <Animateonenterview>
-      <img {...logo} class="w-52 md:w-[400px]">
-    </Animateonenterview>
+<div class="w-full min-h-screen flex items-center justify-between bg-gradient-to-t from-neutralDark">
+  <div class="w-full max-w-[20%] min-h-screen overflow-hidden z-20 relative justify-center items-center bg-center bg-cover bg-no-repeat" style="background-image: url({page.hero.backgroundImage.url}) !important;">
   </div>
-  <div class="max-w-[50%] md:max-w-[40%] mx-auto">
-    <Animateonenterview type="flyRight" delay={200}>
-    <h1>{page.hero.title}</h1>
-  </Animateonenterview>
-  <Animateonenterview type="flyRight" delay={600}>
-    <p class="body-xl py-2 pr-4">{page.hero.text}</p>
-  </Animateonenterview>
+  <video width="80%" height="100%" autoplay controls muted loop class="absolute inset-0 left-[20%] min-h-screen object-center">
+    <source src="https://media.graphassets.com/vOnQJTJkSZ60tbYCLqZc" type="video/mp4">
+    <track kind="captions">
+  </video>
+  <div class="max-w-[50%] md:max-w-[40%] mx-auto text-neutralLight min-h-screen">
+    <div class="absolute bottom-[10%] left-[25%] md:max-w-[50%]">
+      <Animateonenterview type="flyRight" delay={200}>
+      <h1>{page.hero.title}</h1>
+    </Animateonenterview>
+    <Animateonenterview type="flyRight" delay={600}>
+      <p class="body-xl py-2 pr-4">{page.hero.text}</p>
+    </Animateonenterview>
+    </div>
   </div>
 </div>
 
