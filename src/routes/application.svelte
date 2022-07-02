@@ -23,7 +23,7 @@
   import { pages } from '$lib/stores'
   import { logo } from '$lib/config'
 
-  let page = $pages.home
+  let page = $pages.application
 </script>
 
 <!-- <PageTransition>
@@ -31,11 +31,6 @@
   </PageTransition> -->
 
 <div class="w-full relative flex flex-col items-center text-center">
-  <div
-    class="absolute inset-x-0 top-0 h-screen bg-center bg-cover bg-no-repeat"
-    style="background-image: url({page.hero.backgroundImage
-      .url}) !important;"
-  />
   <div class="py-12 px-4 max-w-lg">
     <Animateonenterview delay={200}>
       <h1>{page.hero.title}</h1>
@@ -48,7 +43,7 @@
   <div class="w-[90%] rounded-3xl bg-neutralLight p-12">
     <TextInput label="name" />
     <TextInput label="email" type="email" />
-    <TextInput label="birthdate" type="date" />
+    <TextInput label="birthdate" type="date" value="2000-01-01" />
   </div>
 </div>
 
