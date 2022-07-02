@@ -4,7 +4,7 @@
   /* helpers */
   import {assert} from "$lib/validate";
   /* props */
-  export let type = 'text' // *, text area
+  export let type = 'text' // *, text area, date
   export let trim = false // *, true
   export let validations = [] // *, array of validation objects
   export let validation = false;
@@ -84,6 +84,30 @@
       bind:value
       {placeholder}
       type="text"
+      name={label}
+      class={input.classes}
+      on:focus={focus}
+      on:input={change}
+      on:change={change}
+      on:blur={blur}
+    />
+  {:else if type === 'email'}
+    <input id={label}
+      bind:value
+      {placeholder}
+      type="email"
+      name={label}
+      class={input.classes}
+      on:focus={focus}
+      on:input={change}
+      on:change={change}
+      on:blur={blur}
+    />
+  {:else if type === 'date'}
+    <input id={label}
+      bind:value
+      {placeholder}
+      type="date"
       name={label}
       class={input.classes}
       on:focus={focus}

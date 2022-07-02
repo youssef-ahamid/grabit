@@ -45,7 +45,11 @@
     </Animateonenterview>
   </div>
   
-  <TextInput label="name" />
+  <div class="w-[90%] rounded-3xl bg-neutralLight p-12">
+    <TextInput label="name" />
+    <TextInput label="email" type="email" />
+    <TextInput label="birthdate" type="date" />
+  </div>
 </div>
 
 {#each page.sections as section, i}
