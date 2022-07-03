@@ -63,7 +63,7 @@
       ],
     },
     {
-      value: 'IGCSE',
+      value: 'British',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_the_United_Kingdom.png',
       stages: [
@@ -106,13 +106,15 @@
     class="absolute h-screen top-0 inset-x-0 bg-cover bg-center bg-no-repeat z-[-1]"
     style="background-image: url('{page.hero.backgroundImage?.url}')"
   />
-  <div class="py-12 px-4 max-w-lg mt-[10%] text-neutralLight">
+  <div class="py-16 px-4 max-w-lg mt-[10%] text-neutralLight">
     <Animateonenterview delay={200}>
       <h1>{page.hero.title}</h1>
     </Animateonenterview>
+    {#if page.hero.text }
     <Animateonenterview type="flyUp" delay={600}>
       <p class="body-xl py-2">{page.hero.text}</p>
     </Animateonenterview>
+    {/if}
   </div>
 
   <div
