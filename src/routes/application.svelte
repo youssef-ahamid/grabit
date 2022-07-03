@@ -118,7 +118,7 @@
   </div>
 
   <div
-    class="w-[90%] md:max-w-7xl rounded-[70px] bg-neutralLight p-12 md:px-20 relative"
+    class="w-[90%] md:max-w-7xl rounded-xl md:rounded-[70px] bg-neutralLight p-12 md:px-20 relative"
   >
     {#if !submitted}
       <div transition:slide>
