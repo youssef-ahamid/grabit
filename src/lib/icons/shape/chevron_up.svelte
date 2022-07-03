@@ -3,7 +3,7 @@
 </script>
 
 <svg
-  class={`transition duration-300 ease-out w-full h-auto -rotate-90 group-hover:-translate-y-2 ${className}`}
+  class={`transition duration-300 ease-out w-full h-auto group-hover:-translate-y-2 ${className}`}
   viewBox="0 0 41 41"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"

@@ -2,28 +2,29 @@
 
 <script>
   /* helpers */
-  import {assert} from "$lib/validate";
+  import { assert } from '$lib/validate'
   /* props */
   export let type = 'text' // *, text area, date
   export let trim = false // *, true
   export let validations = [] // *, array of validation objects
-  export let validation = false;
+  export let validation = false
   export let validateOnChange = false // *, true
   export let className = '' // *, custom wrapper classes
   export let label = '' // *, label text
   export let placeholder = '' // *, placeholder text
   export let cta = {}
   export let value = '' // *, bound value
+  export let options = []
   export let styleOptions = {}
 
   /* data */
   $: validation = assert(validations, value)
   $: value = trim ? value.trim() : value
   let clean = true
-  let err = ''
+  export let error = ''
   export const validate = () => {
     clean = validation.success
-    err = clean ? '' : validation.message
+    error = clean ? '' : validation.message
     if (clean) valid()
     else invalid()
   }
@@ -43,8 +44,16 @@
 
   $: lbl = stylus(textInputWrapper({ type, clean, ...styleOptions }))
   $: input = stylus(textInput({ type, clean, ...styleOptions }))
-  $: name = stylus(textInputName({ type, clean, focus: focused, empty, ...styleOptions }))
-  $: error = stylus(textInputError({ type, clean, ...styleOptions }))
+  $: name = stylus(
+    textInputName({
+      type,
+      clean,
+      focus: focused,
+      empty,
+      ...styleOptions,
+    })
+  )
+  $: errorStyles = stylus(textInputError({ type, clean, ...styleOptions }))
   $: CTA = stylus(textInputCTA({ type, clean, ...styleOptions }))
 
   /* transitions */
@@ -53,6 +62,7 @@
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
   import Button from '$lib/components/Button/Button.svelte'
+import Chevron from '$lib/icons/shape/chevron.svelte'
   const dispatch = createEventDispatcher()
   const valid = () => dispatch('valid', value)
   const invalid = () => dispatch('invalid', value)
@@ -80,7 +90,8 @@
     {/if}
   </p>
   {#if type === 'text'}
-    <input id={label}
+    <input
+      id={label}
       bind:value
       {placeholder}
       type="text"
@@ -92,7 +103,8 @@
       on:blur={blur}
     />
   {:else if type === 'email'}
-    <input id={label}
+    <input
+      id={label}
       bind:value
       {placeholder}
       type="email"
@@ -103,8 +115,29 @@
       on:change={change}
       on:blur={blur}
     />
+  {:else if type === 'slotted'}
+    <slot {value} />
+  {:else if type === 'dropdown'}
+    <select
+      bind:value
+      {placeholder}
+      name={label}
+      class={input.classes}
+      on:focus={focus}
+      on:input={change}
+      on:change={change}
+      on:blur={blur}
+    >
+      {#each options as option}
+        <option value={option}>
+          {option}
+        </option>
+      {/each}
+    </select>
+    <Chevron className="absolute right-4 top-1/2 text-brand w-6 md:w-8 rotate-90 peer-focus:-rotate-90" />
   {:else if type === 'date'}
-    <input id={label}
+    <input
+      id={label}
       bind:value
       {placeholder}
       type="date"
@@ -123,7 +156,8 @@
       class={input.classes}
       on:input={change}
       on:focus={focus}
-      on:blur={blur}></textarea>
+      on:blur={blur}
+    />
   {/if}
   {#key clean}
     {#if !!cta.type && clean}
@@ -135,8 +169,8 @@
       </div>
     {/if}
     {#if !clean}
-      <p transition:slide={{ duration: 300 }} class={error.classes}>
-        {err}
+      <p transition:slide={{ duration: 300 }} class={errorStyles.classes}>
+        {error}
       </p>
     {/if}
   {/key}

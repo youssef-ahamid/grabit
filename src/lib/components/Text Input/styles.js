@@ -17,7 +17,7 @@ export const textInput = props => {
   return [
     {
       classes:
-        'block outline-none appearance-none py-3 px-4 transition-300 placeholder:text-gray-300 caret-brand placeholder:font-light border-b-2 border-neutralDark shadow-inner rounded-t-md bg-neutral focus:bg-brand focus:bg-opacity-[20%] focus:border-brand text-neutralDark w-full placeholder:text-left',
+        'block peer outline-none appearance-none py-3 px-4 h-12 w-full md:h-14 transition-300 placeholder:text-gray-700 placeholder:font-bold caret-brand placeholder:opacity-50 border-b-2 border-neutralDark shadow-inner rounded-t-md bg-neutral focus:bg-brand focus:bg-opacity-[20%] focus:border-brand text-neutralDark w-full placeholder:text-left',
       styles: '',
       on: true, // default
     },
@@ -44,17 +44,17 @@ export const textInput = props => {
 export const textInputName = props => {
   return [
     {
-      classes: 'absolute capitalize font-bold left-2 bottom-2 transition-300',
+      classes: 'capitalize text-left font-bold transition-300',
       styles: '',
       on: true, // default
     },
     {
-      classes: '-translate-x-4 -translate-y-12 opacity-100 scale-75 text-brand',
+      classes: 'text-brand',
       styles: '',
       on: props.focus || !props.empty,
     },
     {
-      classes: 'opacity-50',
+      classes: 'text-neutralDark',
       styles: '',
       on: !props.focus && props.empty,
     },

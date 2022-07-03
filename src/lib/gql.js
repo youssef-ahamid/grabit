@@ -16,6 +16,29 @@ export async function getPage(slug) {
   return page
 }
 
+const parse = obj => {
+  let str = ''
+  for (const [key, value] of Object.entries(obj)) {
+    str += `${key}: "${value}", `
+  }
+  return str
+}
+
+export const submitApplication = async application => {
+  let parsedApplication = parse(application)
+  const data = await graphcms.request(`
+    mutation {
+        createApplication(data: { ${
+          parsedApplication
+        } }) {
+          id
+          name
+        }
+      }
+  `, application)
+  return data
+}
+
 export async function getSection(id) {
   const { section } = await graphcms.request(`
     {
