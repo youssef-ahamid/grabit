@@ -4,23 +4,7 @@ export let iconWrapper = options => {
   return [
     {
       classes:
-        'hidden transition duration-300 ease-out w-12 h-12 scale-125 pl-1 flex rounded-full flex-col items-center justify-center text-center lg:w-16 fixed lg:hidden shadow-secondary/30 right-8 top-10 z-[999]',
-    },
-    {
-      on: [options.active, true],
-      classes: 'shadow-none',
-    },
-    {
-      on: [options.active, false],
-      classes: 'shadow-lg',
-    },
-    {
-      on: [options.type, 'primary'],
-      classes: 'bg-neutralLight text-primary',
-    },
-    {
-      on: [options.type, 'secondary'],
-      classes: 'bg-primary text-neutralLight',
+        'z-[999] transition duration-300 ease-out w-full h-20 flex flex-col items-center justify-center text-center bg-neutral z-[999]',
     },
   ]
 }
@@ -28,7 +12,7 @@ export let iconWrapper = options => {
 export let icon = options => {
   return [
     {
-      classes: `transition duration-500`,
+      classes: `transition duration-500 text-brand`,
     },
     {
       on: [options.active, true],
@@ -79,14 +63,14 @@ export let nav = options => {
   return [
     {
       classes:
-        'fixed bg-brandDark top-0 bottom-0 left-0 min-w-[20rem] max-w-fit z-[999] transition duration-700 ease-out',
+        'fixed bg-brandDark top-0 bottom-0 left-0 min-w-[20rem] max-w-fit z-[900] transition duration-700 ease-out',
     },
     {
-      classes: "-translate-x-[95%]",
+      classes: "-translate-x-[110%]",
       on: [options.active, false],
     },
     {
-      classes: "translate-x-0",
+      classes: "translate-x-12",
       on: [options.active, true],
     }
   ]
