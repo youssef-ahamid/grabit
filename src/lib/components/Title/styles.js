@@ -2,7 +2,7 @@ export const titleText = (props) => {
   return [
     {
       classes:
-        `relative pt-6 md:pt-12 max-w-lg mt-6 max-w-fit`,
+        `relative pt-6 md:pt-12 max-w-lg mt-6`,
       on: true,
     },
     {

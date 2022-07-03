@@ -7,6 +7,7 @@
   export let label = '' // *, button text
   export let active = true // *, false
   export let reverse = false // *, true
+  export let nowrap = false // *, true
   export let styleOptions = {}
 
   import { resolve } from '$lib/icons'
@@ -25,6 +26,7 @@
       label,
       shape,
       reverse,
+      nowrap,
       ...styleOptions,
     })
   )

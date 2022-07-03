@@ -48,7 +48,7 @@ export const buttonLabel = (props) => {
   return [
     {
       classes:
-        "text-current z-[5] whitespace-nowrap uppercase font-semibold select-none leading-none transition duration-300 ease-out py-2",
+        "text-current z-[5] md:whitespace-nowrap uppercase font-semibold select-none leading-none transition duration-300 ease-out py-2",
       styles: "",
       on: true, // default
     },
@@ -57,6 +57,11 @@ export const buttonLabel = (props) => {
       styles: "",
       on: !props.label || props.label.length == 0,
     },
+    {
+      classes: "whitespace-nowrap",
+      styles: "",
+      on: props.nowrap
+    },
   ];
 };
 
@@ -64,7 +69,7 @@ export const buttonIcon = (props) => {
   return [
     {
       classes:
-        "transition duration-500 ease-out text-current w-4 md:w-8 block",
+        "transition duration-500 ease-out text-current w-8 md:w-10 block",
       styles: "",
       on: true, // default
     },

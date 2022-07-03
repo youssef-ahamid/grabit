@@ -39,20 +39,20 @@
 </PageTransition> -->
 
 <div
-  class="w-full min-h-screen flex items-center justify-between bg-gradient-to-t from-neutralDark"
+  class="w-full min-h-screen flex items-center justify-between bg-gradient-to-t from-neutralDark max-w-[100vw] overflow-hidden"
 >
-  <div
+  <!-- <div
     class="w-full max-w-[20%] min-h-screen overflow-hidden z-20 relative justify-center items-center bg-center bg-cover bg-no-repeat"
     style="background-image: url({page.hero.backgroundImage.url}) !important;"
-  />
+  /> -->
   <video
-    width="80%"
+    width="100%"
     height="100%"
     autoplay
     controls
     muted
     loop
-    class="absolute inset-0 left-[20%] min-h-screen object-center"
+    class="absolute inset-0 min-h-screen object-center z-[-1]"
   >
     <source
       src="https://media.graphassets.com/vOnQJTJkSZ60tbYCLqZc"
@@ -63,7 +63,7 @@
   <div
     class="max-w-[50%] md:max-w-[40%] mx-auto text-neutralLight min-h-screen"
   >
-    <div class="absolute bottom-[10%] left-[25%] md:max-w-[50%]">
+    <div class="absolute bottom-[10%] left-20 md:max-w-[50%]">
       <Animateonenterview type="flyRight" delay={200}>
         <h1>{page.hero.title}</h1>
       </Animateonenterview>

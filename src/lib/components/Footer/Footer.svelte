@@ -39,36 +39,17 @@
   $: classes = config()
 </script>
 
-<Section id="footer" noContain className="bg-neutral">
+<Section id="footer" noContain className="bg-neutral max-w-[100vw] overflow-hidden">
   <footer class={`${classes.footer} ${className}`}>
     <nav class={classes.links}>
       <div
         class="flex flex-wrap md:flex-nowrap space-y-12 md:space-y-0 items-start justify-start"
       >
         <div class="h-full">
-          <p class="font-bold pb-8 px-2 md:px-4">School Info</p>
           <List
-            items={links.filter(link => link.group === 'info')}
+            items={links}
             let:item={link}
-            className="grid grid-cols-2 gap-8"
-            let:index
-          >
-            <Animateonenterview type="flyUp" delay={100 * index}>
-              <NavLink
-                to={link.to}
-                redirect={link.redirect}
-                text={link.text}
-                className={classes.link}
-              />
-            </Animateonenterview>
-          </List>
-        </div>
-        <div class="h-full">
-          <p class="font-bold pb-8 px-2 md:px-4">Useful Links</p>
-          <List
-            items={links.filter(link => link.group === 'useful')}
-            let:item={link}
-            className="grid grid-cols-2 md:grid-cols-1 gap-8"
+            className="grid grid-cols-2 lg:grid-cols-3 gap-8"
             let:index
           >
             <Animateonenterview type="flyUp" delay={100 * index}>

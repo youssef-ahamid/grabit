@@ -49,9 +49,24 @@ export const links = [
     group: "info",
   },
   {
-    to: "/contact-us",
-    text: "Contact Us",
+    to: "/life-at-newcastle",
+    text: "Life at Newcastle",
     group: "info",
+  },
+  {
+    to: "/announcements",
+    text: "Announcements",
+    group: "useful",
+  },
+  {
+    to: "/blog",
+    text: "Blog",
+    group: "useful",
+  },
+  {
+    to: "/faq",
+    text: "FAQ",
+    group: "useful",
   },
   {
     to: "/admissions",
@@ -59,29 +74,19 @@ export const links = [
     group: "info",
   },
   {
-    to: "/blog",
-    text: "Blog",
+    to: "/application",
+    text: "Application",
     group: "info",
   },
   {
-    to: "/life-at-newcastle",
-    text: "Life at Newcastle",
+    to: "/contact-us",
+    text: "Contact Us",
     group: "info",
   },
   {
     to: "/careers",
     text: "Careers",
-    group: "info",
-  },
-  {
-    to: "/announcements",
-    text: "Announcements",
-    group: "info",
-  },
-  {
-    to: "/faq",
-    text: "Frequently Asked Questions",
-    group: "info",
+    group: "useful",
   },
   {
     to: "/student-portal",
@@ -91,11 +96,6 @@ export const links = [
   {
     to: "/tour",
     text: "Book A Tour",
-    group: "useful",
-  },
-  {
-    to: "/application",
-    text: "Application",
     group: "useful",
   },
 ]
