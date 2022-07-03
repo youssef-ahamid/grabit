@@ -36,6 +36,11 @@ export const button = (props) => {
       styles: "",
       on: props.type == "secondary",
     },
+    {
+      classes: "flex-row-reverse",
+      styles: "",
+      on: props.reverse,
+    },
   ];
 };
 
@@ -59,7 +64,7 @@ export const buttonIcon = (props) => {
   return [
     {
       classes:
-        "transition duration-500 ease-out text-current w-6 md:w-10 block",
+        "transition duration-500 ease-out text-current w-4 md:w-8 block",
       styles: "",
       on: true, // default
     },
