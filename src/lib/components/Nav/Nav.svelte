@@ -62,7 +62,7 @@ import ChevronRight from '$lib/icons/shape/chevron_right.svelte'
 </div>
 {/if}
 
-<div class="z-[998] ring fixed w-12 bg-brandDark left-0 top-0 bottom-0 transition-300 max-w-[100vw] max-h-[100vh] overflow-hidden" class:ring-neutral={active} class:ring-transparent={!active}>
+<div class="z-[998] ring-1 fixed w-12 bg-brandDark left-0 top-0 bottom-0 transition-300 max-w-[100vw] max-h-[100vh] overflow-hidden ring-neutral">
   <div class="relative h-screen w-12" use:clickOutside on:outclick={() => { if(active) active = false }}>
     <div class={classes.iconWrapper} on:click={toggle} id="menu-icon">
       <svelte:component this={icon} className={classes.icon} {active} />

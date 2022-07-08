@@ -36,11 +36,11 @@ export const section = props => {
 export const slotContent = props => {
   return [
     {
-      classes: 'mt-12',
+      classes: 'mt-6',
       on: true,
     },
     {
-      classes: 'flex flex-col justify-center items-center space-y-2 md:space-y-8',
+      classes: 'flex flex-col justify-center items-center space-y-2 md:space-y-4',
       on: props.contentLayout == 'center',
     },
     {
