@@ -6,6 +6,8 @@
     let slug = url.pathname.substring(1)
     if (slug === '') slug = 'home'
 
+    if (slug.includes('blog')) return {}
+
     let page = await getPage(slug)
     return {
       props: {
@@ -20,7 +22,7 @@
   export let page, slug
 
   import { pages } from '$lib/stores'
-  $pages[slug] = page
+  if (!!slug && !!page) $pages[slug] = page
 
   import '../lib/styles/app.css'
   import SEO from '$lib/components/SEO/SEO.svelte'
@@ -28,7 +30,7 @@
   import Footer from '$lib/components/Footer/Footer.svelte'
 </script>
 
-{#if !!page.seo}
+{#if !!page?.seo}
   <SEO {...page.seo} />
 {/if}
 
@@ -43,7 +45,7 @@
     : null}
 />
 <div class="pl-12 w-[100vw] overflow-hidden">
-  <slot sections={page.sections} />
+  <slot sections={page?.sections} />
   <Footer />
 </div>
 

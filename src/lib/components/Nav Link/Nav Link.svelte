@@ -9,7 +9,6 @@
   export let sublinkOpen = false
   export let activeSub = 0
   export let links = []
-  console.log(links)
   export let styleOptions = {}
 
   import Go from '$lib/components/Go/Go.svelte'

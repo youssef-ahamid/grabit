@@ -1,30 +1,27 @@
+
 //  reusable json presets for queries
-export const sectionQuery = `
-  identifier
-  backgroundImage {
-    url
-  }
-  backgroundColor
-  button {
+export const buttonQuery = `
+  {
     icon
     label
     link
     shape
     type
   }
+`
+
+export const sectionQuery = `
+  identifier
+  backgroundImage {
+    url
+  }
+  backgroundColor
+  button ${buttonQuery}
   contentLayout
   content {
-    ... on Button {
-      __typename
-      icon
-      label
-      link
-      shape
-      stage
-      type
-    }
+    __typename
+    ... on Button ${buttonQuery}
     ... on Division {
-      __typename
       text
       title
       subtitle
@@ -33,21 +30,18 @@ export const sectionQuery = `
       }
     }
     ... on InfoCard {
-      __typename
       icon
       infoItem
       title
       type
     }
     ... on Image {
-      __typename
       image {
         url
       }
       alt
     }
     ... on Quote {
-      __typename
       name
       role
       text
@@ -63,6 +57,39 @@ export const sectionQuery = `
   layout
   fullHeight
 `;
+
+export const  blogQuery = `
+  {
+    author {
+      name
+      image {
+        url
+      }
+      role
+    }
+    content {
+      __typename
+      ... on BlogSection {
+        content {
+          html
+        }
+        showInNavigation
+        title
+      }
+      ... on Button ${buttonQuery}
+    }
+    genre
+    image {
+      url
+    }
+    keywords
+    slug
+    title
+    tags {
+      title
+    }
+  }
+`
 
 export const pageQuery = `
   slug,
