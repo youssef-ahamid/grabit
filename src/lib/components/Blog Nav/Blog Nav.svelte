@@ -31,13 +31,13 @@
     {#each sections as section, i}
       <Go
         to="#{slugify(section.title)}"
-        className="transition-300 flex items-center space-x-2 origin-left {active ===
+        className="transition-300 flex items-center space-x-2 origin-left text-neutralDark hover:text-brand hover:opacity-90 {active ===
         i
           ? ''
-          : 'opacity-50 scale-75'}"
+          : 'opacity-50 scale-75 hover:scale-[85%]'}"
       >
         <div
-          class="h-2 w-16 rounded-r-full transition-300 bg-neutralDark"
+          class="h-2 w-16 rounded-r-full transition-300 bg-current"
         />
         <p class="font-bold">{section.title}</p>
       </Go>
