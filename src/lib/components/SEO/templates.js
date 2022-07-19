@@ -21,11 +21,13 @@ export const article = blog => {
             author: {
                 "@type": "Person",
                 name: author.name,
+                url: "https://newcastle.vercel.app",
                 worksFor: "NewCastle School"
             },
             creator: {
                 "@type": "Person",
                 name: author.name,
+                url: "https://newcastle.vercel.app",
                 worksFor: "NewCastle School"
             },
             publisher: {
