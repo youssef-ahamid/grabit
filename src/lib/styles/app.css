@@ -7,19 +7,19 @@
 @layer base {
   /* typography */
   h1 {
-    @apply font-body font-bold text-3xl md:text-5xl;
+    @apply font-body font-bold text-3xl md:text-5xl selection:text-neutralLight selection:bg-brand;
   }
 
   h2 {
-    @apply font-body font-bold text-xl md:text-2xl;
+    @apply font-body font-bold text-xl md:text-2xl selection:text-neutralLight selection:bg-brand;
   }
 
   h3 {
-    @apply font-body font-bold text-sm md:text-lg;
+    @apply font-body font-bold text-sm md:text-lg selection:text-neutralLight selection:bg-brand;
   }
 
   p {
-    @apply font-body font-light max-w-[52ch] text-sm md:text-base;
+    @apply font-body font-light max-w-[52ch] text-sm md:text-base selection:bg-brand/20 selection:text-brand;
   }
 
   button p {
@@ -39,11 +39,11 @@
   }
 
   q {
-    @apply text-sm md:text-lg;
+    @apply text-sm md:text-lg selection:bg-brand/20 selection:text-brand;
   }
 
   input {
-    @apply font-light text-base md:text-xl placeholder:text-center placeholder:text-sm md:placeholder:text-lg leading-snug;
+    @apply font-light text-base md:text-xl placeholder:text-center placeholder:text-sm md:placeholder:text-lg leading-snug  selection:bg-brand/20 selection:text-brand;
   }
 
   .slide-underline {
@@ -54,6 +54,22 @@
   .transition-300 {
     @apply transition duration-300 ease-out;
   }
+}
+
+.blog-content p {
+  @apply whitespace-pre-line py-2 px-4 max-w-none leading-[200%]
+}
+
+.blog-content h2 {
+  @apply whitespace-pre-line py-2 px-4 max-w-none
+}
+
+.blog-content img {
+  @apply w-full object-center object-cover py-2 md:px-4 md:rounded-[60px]
+}
+
+.blog-content a {
+  @apply text-brand font-bold underline decoration-brand hover:opacity-75 hover:-translate-y-1 transition-300 
 }
 
 /* base */

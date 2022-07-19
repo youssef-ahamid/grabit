@@ -1,9 +1,12 @@
 <script>
   import { site } from '$lib/config'
+  import { getTemplate } from './templates'
 
   export let description = ''
   export let title = ''
   export let image
+  export let ld = null
+
   if (!image)
     image = {
       url: site.mainImage,
@@ -29,4 +32,7 @@
     name="robots"
     content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
   />
+  {#if !!ld}
+    {@html getTemplate(ld.name, ld.data)}
+  {/if}
 </svelte:head>

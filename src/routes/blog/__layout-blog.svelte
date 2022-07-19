@@ -11,7 +11,7 @@
     link: '/application',
   }}
 />
-<div class="pl-12 w-[100vw] overflow-hidden">
+<div class="overflow-hidden">
   <slot />
   <Footer />
 </div>

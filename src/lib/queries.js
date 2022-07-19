@@ -72,6 +72,7 @@ export const  blogQuery = `
       ... on BlogSection {
         content {
           html
+          text
         }
         showInNavigation
         title
@@ -88,6 +89,9 @@ export const  blogQuery = `
     tags {
       title
     }
+    description
+    updatedAt
+    createdAt
   }
 `
 
