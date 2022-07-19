@@ -89,6 +89,15 @@ export const slugify = text => {
     .replace(/\-\-+/g, '-')
 }
 
+export const createArray = (
+  N,
+  F = (num) => {
+    return num;
+  }
+) => {
+  return [...Array(N).keys()].map((i) => F(i));
+};
+
 export const getComponentData = (components, component) => {
   if (components.length == 0 || !Array.isArray(components))
     return null

@@ -35,7 +35,7 @@
 {/if}
 
 <Nav
-  cta={slug != 'application'
+  cta={slug != 'application' && !!slug && !slug.includes('blog')
     ? {
         label: 'apply now',
         type: 'secondary',
@@ -44,7 +44,7 @@
       }
     : null}
 />
-<div class="pl-12 w-[100vw] overflow-hidden">
+<div class="pl-12 overflow-hidden">
   <slot sections={page?.sections} />
   <Footer />
 </div>

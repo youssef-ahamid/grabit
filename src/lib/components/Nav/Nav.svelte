@@ -4,7 +4,7 @@
   // export let links = [] // *, list items
   export let activeLink
   export let activeSub = 0
-  export let cta 
+  export let cta = null
   export let icon = Burger
   export let className = '' // *, custom wrapper classes
   export let styleOptions = {}
@@ -131,7 +131,8 @@ import ChevronRight from '$lib/icons/shape/chevron_right.svelte'
     >
       <Button
         on:click={toTop}
-        icon="chevron_up"
+        icon="chevron_right"
+        className="-rotate-90 bg-neutralLight"
         shape="icon"
         type="primary"
       />

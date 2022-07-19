@@ -1,16 +1,43 @@
 <script>
   import BlogContent from '$lib/components/Blog Content/Blog Content.svelte'
+  import BlogNav from '$lib/components/Blog Nav/Blog Nav.svelte'
   import Button from '$lib/components/Button/Button.svelte'
-  import { content } from '$lib/components/Feature/styles'
   import Go from '$lib/components/Go/Go.svelte'
-import Seo from '$lib/components/SEO/SEO.svelte'
+  import Seo from '$lib/components/SEO/SEO.svelte'
+  import { createArray } from '$lib/helpers'
 
   export let slug
   export let blog
 
-  blog.body = blog.content.filter(c => c.__typename === "BlogSection").map(c => c.content.text).join(`\n`)
+  blog.content = blog.content.reverse()
+  blog.body = blog.content
+    .filter(c => c.__typename === 'BlogSection')
+    .map(c => c.content.text)
+    .join(`\n`)
 
-  console.log({ slug, blog })
+  let sections = blog.content.filter(
+    c => c.__typename === 'BlogSection' && !!c.title
+  )
+
+  let activeSections = createArray(sections.length, n => {
+    return false
+  })
+  $: activeSection = activeSections.lastIndexOf(true)
+  const activate = e => {
+    activeSections[
+      sections.indexOf(
+        sections.filter(section => section.title === e.detail)[0]
+      )
+    ] = true
+  }
+
+  const inactivate = e => {
+    activeSections[
+      sections.indexOf(
+        sections.filter(section => section.title === e.detail)[0]
+      )
+    ] = false
+  }
 
   const getDate = timestamp => {
     let date = new Date(timestamp)
@@ -20,11 +47,11 @@ import Seo from '$lib/components/SEO/SEO.svelte'
   }
 </script>
 
-<Seo 
+<Seo
   title={blog.title}
   description={blog.description}
   image={blog.image}
-  ld={{ name: "article", data: blog }}
+  ld={{ name: 'article', data: blog }}
 />
 
 <div
@@ -74,15 +101,23 @@ import Seo from '$lib/components/SEO/SEO.svelte'
     style="background-image: url({blog.image?.url}) !important;"
   />
 </div>
-
-<div class="flex flex-col-reverse py-12 w-full md:px-[3%] md:max-w-[70%] lg:max-w-4xl">
-  {#each blog.content as content}
-    {#if content.__typename === 'BlogSection'}
-      <BlogContent {...content} />
-    {:else if content.__typename === 'Button'}
-      <Go to={content.link} className="max-w-fit mx-auto my-4">
-        <Button {...content} />
-      </Go>
-    {/if}
-  {/each}
+<div class="flex items-stretch justify-between relative">
+  <div
+    class="flex flex-col py-12 w-full md:px-[3%] md:max-w-[70%] lg:max-w-4xl"
+  >
+    {#each blog.content as content}
+      {#if content.__typename === 'BlogSection'}
+        <BlogContent
+          {...content}
+          on:active={activate}
+          on:inactive={inactivate}
+        />
+      {:else if content.__typename === 'Button'}
+        <Go to={content.link} className="max-w-fit mx-auto my-4">
+          <Button {...content} />
+        </Go>
+      {/if}
+    {/each}
+  </div>
+  <BlogNav {sections} bind:active={activeSection} />
 </div>
