@@ -20,6 +20,7 @@ export async function getBlog(slug) {
       blog(where: {slug: "${slug}"}) ${blogQuery}      
     }
   `);
+  blog.content = blog.content.reverse()
   return blog;
 }
 

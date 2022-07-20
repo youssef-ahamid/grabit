@@ -9,7 +9,6 @@
   export let slug
   export let blog
 
-  blog.content = blog.content.reverse()
   blog.body = blog.content
     .filter(c => c.__typename === 'BlogSection')
     .map(c => c.content.text)
