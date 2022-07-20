@@ -26,7 +26,7 @@
   <div
     class="py-12 right-0 top-0 {inside
       ? 'fixed'
-      : 'absolute'} bg-neutralLight shadow-xl rounded-bl-[60px] w-80 flex flex-col space-y-2"
+      : 'absolute'} bg-neutral w-80 flex flex-col space-y-2"
   >
     {#each sections as section, i}
       <Go
@@ -37,7 +37,7 @@
           : 'opacity-50 scale-75 hover:scale-[85%]'}"
       >
         <div
-          class="h-2 w-16 rounded-r-full transition-300 bg-current"
+          class="h-2 w-16 rounded-full transition-300 bg-current"
         />
         <p class="font-bold">{section.title}</p>
       </Go>

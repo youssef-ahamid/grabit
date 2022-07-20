@@ -89,6 +89,13 @@ export const slugify = text => {
     .replace(/\-\-+/g, '-')
 }
 
+export const getMonthDate = timestamp => {
+  let date = new Date(timestamp)
+  return `${date.toLocaleString('default', {
+    month: 'long',
+  })} ${date.getDate()}, ${date.getFullYear()}`
+}
+
 export const createArray = (
   N,
   F = (num) => {
