@@ -35,7 +35,7 @@ import { createArray } from '$lib/helpers';
 
 <div class="flex items-stretch justify-between relative">
   <div
-    class="flex flex-col py-12 w-full md:px-[3%] md:max-w-[70%] lg:max-w-4xl"
+    class="flex flex-col pt-12 w-full md:px-[3%] md:max-w-[70%] lg:max-w-4xl"
   >
     {#each blog.content as content}
       {#if content.__typename === 'BlogSection'}
@@ -50,6 +50,7 @@ import { createArray } from '$lib/helpers';
         </Go>
       {/if}
     {/each}
+    <div class="mt-8 h-px bg-gray-300 w-full"></div>
   </div>
   <BlogNav {sections} bind:active={activeSection} />
 </div>

@@ -26,7 +26,7 @@
   <div
     class="py-12 right-0 top-0 {inside
       ? 'fixed'
-      : 'absolute'} bg-neutral w-80 flex flex-col space-y-2"
+      : 'absolute'} w-80 flex flex-col space-y-2"
   >
     {#each sections as section, i}
       <Go
