@@ -1,4 +1,3 @@
-
 //  reusable json presets for queries
 export const buttonQuery = `
   {
@@ -8,7 +7,21 @@ export const buttonQuery = `
     shape
     type
   }
-`
+`;
+
+export const blogPreviewQuery = `
+  {
+    slug
+    title
+    tags {
+      title
+    }
+    image {
+      url
+    }
+    createdAt
+  }
+`;
 
 export const sectionQuery = `
   identifier
@@ -58,7 +71,7 @@ export const sectionQuery = `
   fullHeight
 `;
 
-export const  blogQuery = `
+export const blogQuery = `
   {
     author {
       name
@@ -92,8 +105,9 @@ export const  blogQuery = `
     description
     updatedAt
     createdAt
+    related(first: 3, orderBy: createdAt_DESC) ${blogPreviewQuery}
   }
-`
+`;
 
 export const pageQuery = `
   slug,

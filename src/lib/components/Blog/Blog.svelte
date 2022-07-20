@@ -22,4 +22,6 @@
 <BlogHero {blog} />
 <BlogBody {blog} />
 
-<RelatedBlogs blogs={[blog, blog, blog]} />
+{#if blog.related?.length > 0}
+  <RelatedBlogs blogs={blog.related} />
+{/if}

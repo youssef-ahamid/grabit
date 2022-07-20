@@ -8,19 +8,19 @@
 </script>
 
 <div
-  class="bg-neutralLight rounded-3xl shadow-lg hover:shadow-sm transition-300 w-full max-w-sm self-center"
+  class="bg-neutralLight rounded-3xl shadow-lg hover:shadow-sm transition-300 w-full max-w-md self-center pt-4"
 >
   <div class="flex flex-col space-y-6 py-3">
     <div class="flex justify-between items-center px-4">
-      <div class="flex space-x-1">
+      <div class="flex space-x-1 min-w-[15rem]">
         {#each blog.tags as tag, i}
-          {#if i < 2}
+          {#if i < 1}
             <div
               class="px-3 py-0.5 bg-brand/25 rounded-full flex items-center justify-center text-brand hover:bg-brand cursor-pointer hover:scale-105 transition-300 hover:text-neutralLight"
             >
               <p class="font-bold uppercase body-sm">{tag.title}</p>
             </div>
-          {:else if i === 2}
+          {:else if i === 1}
             <div
               class="px-3 py-0.5 bg-brand/25 rounded-full flex items-center justify-center text-brand"
             >
