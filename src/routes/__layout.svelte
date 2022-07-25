@@ -6,7 +6,7 @@
     let slug = url.pathname.substring(1)
     if (slug === '') slug = 'home'
 
-    if (slug.includes('blog')) return {}
+    if (slug !== 'blog' && slug.includes('blog')) return {}
 
     let page = await getPage(slug)
     return {

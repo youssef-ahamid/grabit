@@ -21,11 +21,11 @@
       <div class="flex space-x-1 min-w-[10rem]">
         {#each blog.tags as tag, i}
           {#if i < 1}
-            <div
-              class="px-3 py-0.5 bg-brand/25 rounded-full flex items-center justify-center text-brand hover:bg-brand cursor-pointer hover:scale-105 transition-300 hover:text-neutralLight"
+            <Go to="/blog?tag={tag.title}"
+              className="px-3 py-0.5 bg-brand/25 rounded-full flex items-center justify-center text-brand hover:bg-brand cursor-pointer hover:scale-105 transition-300 hover:text-neutralLight"
             >
               <p class="font-bold uppercase body-sm">{tag.title}</p>
-            </div>
+            </Go>
           {:else if i === 1}
             <div
               class="px-3 py-0.5 bg-brand/25 rounded-full flex items-center justify-center text-brand"

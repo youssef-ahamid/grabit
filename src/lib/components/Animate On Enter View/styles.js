@@ -42,5 +42,13 @@ export const animationWrapper = props => {
       classes: 'translate-y-0 opacity-100',
       on: props.type == 'flyUp' && props.intersecting,
     },
+    {
+      classes: '-translate-y-12 opacity-0',
+      on: props.type == 'flyDown' && !props.intersecting,
+    },
+    {
+      classes: 'translate-y-0 opacity-100',
+      on: props.type == 'flyDown' && props.intersecting,
+    },
   ]
 }

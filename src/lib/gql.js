@@ -1,5 +1,10 @@
 import { GraphQLClient } from "graphql-request";
-import { blogQuery, pageQuery, sectionQuery } from "./queries";
+import {
+  blogPreviewQuery,
+  blogQuery,
+  pageQuery,
+  sectionQuery,
+} from "./queries";
 
 export const graphcms = new GraphQLClient(import.meta.env.VITE_GRAPHCMS_URL);
 
@@ -20,8 +25,17 @@ export async function getBlog(slug) {
       blog(where: {slug: "${slug}"}) ${blogQuery}      
     }
   `);
-  blog.content = blog.content.reverse()
+  blog.content = blog.content.reverse();
   return blog;
+}
+
+export async function getBlogPreviews() {
+  const { blogs } = await graphcms.request(`
+    {
+      blogs ${blogPreviewQuery}      
+    }
+  `);
+  return blogs;
 }
 
 const parse = (obj) => {

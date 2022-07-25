@@ -13,6 +13,7 @@ export const blogPreviewQuery = `
   {
     slug
     title
+    description
     tags {
       title
     }
