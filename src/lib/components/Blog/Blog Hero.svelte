@@ -1,5 +1,6 @@
 <script>
   import { getMonthDate } from '$lib/helpers'
+  import BlogTag from './Blog Tag.svelte'
 
   export let blog
 </script>
@@ -12,11 +13,7 @@
   >
     <div class="flex space-x-2">
       {#each blog.tags as tag}
-        <div
-          class="px-5 py-1 bg-brand/25 rounded-full flex items-center justify-center text-brand hover:bg-brand cursor-pointer hover:scale-105 transition-300 hover:text-neutralLight"
-        >
-          <p class="font-bold uppercase">{tag.title}</p>
-        </div>
+        <BlogTag {tag} />
       {/each}
     </div>
     <h1>{blog.title}</h1>

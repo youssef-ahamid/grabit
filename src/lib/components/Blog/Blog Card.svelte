@@ -5,14 +5,20 @@
   import Go from '../Go/Go.svelte'
 
   export let blog
+  export let detailed = false
+
+  let className = ''
+  export { className as class }
 </script>
 
 <div
-  class="bg-neutralLight rounded-3xl shadow-lg hover:shadow-sm transition-300 w-full max-w-md self-center pt-4"
+  class="bg-neutralLight rounded-3xl shadow-lg hover:shadow-sm transition-300 w-full {!detailed
+    ? 'max-w-md'
+    : ''} self-center pt-4 {className}"
 >
   <div class="flex flex-col space-y-6 py-3">
     <div class="flex justify-between items-center px-4">
-      <div class="flex space-x-1 min-w-[15rem]">
+      <div class="flex space-x-1 min-w-[10rem]">
         {#each blog.tags as tag, i}
           {#if i < 1}
             <div
@@ -31,7 +37,7 @@
           {/if}
         {/each}
       </div>
-      <p class="text-xs md:text-sm font-bold text-gray-500">
+      <p class="text-xs md:text-sm font-bold text-gray-500 whitespace-nowrap">
         {getMonthDate(blog.createdAt)}
       </p>
     </div>
@@ -46,7 +52,7 @@
             read
           </p></button
         >
-        </a>
+      </a>
       <img
         src={blog.image?.url}
         alt="{blog.title} | {blog.description}"
@@ -55,6 +61,9 @@
     </div>
     <div class="text-left px-4 flex flex-col space-y-4">
       <h3>{blog.title}</h3>
+      {#if detailed}
+        <p class="w-full py-2 max-w-3xl">{blog.description}</p>
+      {/if}
       <Go to="/blog/{blog.slug}" className="self-end">
         <Button label="read more" icon="chevron_right" />
       </Go>
