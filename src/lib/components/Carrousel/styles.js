@@ -17,7 +17,7 @@ export const carrousel = props => {
   return [
     {
       classes:
-        'flex flex-wrap md:flex-nowrap min-h-[150px] md:min-h-[180px] items-center md:items-end justify-center w-full overflow-hidden',
+        'flex flex-wrap md:flex-nowrap min-h-[150px] md:min-h-[180px] items-center justify-center w-full py-12',
       styles: ``,
       on: true, // default
     },

@@ -9,6 +9,7 @@ module.exports = {
         brand: "#B9752A",
         brandDark: "#621227",
         brandLight: "#FADA79",
+        accent: "#9ef372"
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],

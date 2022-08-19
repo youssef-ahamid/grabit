@@ -1,5 +1,6 @@
 <script>
   export let className = ''
+  export let stroke = 0
 </script>
 
 <svg
@@ -11,7 +12,7 @@
   <path
     d="M15.375 30.75L25.625 20.5L15.375 10.25"
     class="stroke-current"
-    stroke-width="2"
+    stroke-width={stroke || 2}
     stroke-linecap="round"
     stroke-linejoin="round"
   />

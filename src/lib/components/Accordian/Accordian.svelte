@@ -44,27 +44,24 @@
   className={`${wrapper.classes} ${className}`}
 >
   <Card
-    type="primary"
     className={itemWrapper.classes}
     on:click={() => {
       select(index)
     }}
   >
     <div class={titleWrapper.classes}>
-      <h4>{item.title}</h4>
+      <h3>{item.title}</h3>
       <Chevron
+        stroke="3"
         className="{open === index
           ? '-rotate-90'
-          : 'rotate-90'} text-current w-7 max-w-[3rem] ml-2"
+          : 'rotate-90'} w-7 max-w-[3rem] ml-2 text-accent"
       />
     </div>
-    {#if open === index}
-      <div
-        transition:slide={{ duration: 300 }}
-        class={content.classes}
-      >
-        <p>{item.content}</p>
-      </div>
-    {/if}
   </Card>
+  {#if open === index}
+    <div transition:slide={{ duration: 300 }} class={content.classes}>
+      <p>{item.content}</p>
+    </div>
+  {/if}
 </List>

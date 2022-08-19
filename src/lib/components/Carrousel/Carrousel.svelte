@@ -98,7 +98,7 @@
 >
   <List
     {items}
-    let:prop={item}
+    let:item
     let:index
     className={`${carr.classes} absolute top-4`}
     styles={carr.classes}
@@ -111,6 +111,7 @@
         {item}
         previewed={index < currentStep + numPreviewedEachStep &&
           index >= currentStep}
+        {index}
       />
     </div>
   </List>

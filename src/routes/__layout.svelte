@@ -1,4 +1,4 @@
-<script context="module">
+<!-- <script context="module">
   export const prerender = true
   import { getPage, graphcms } from '$lib/gql'
 
@@ -16,36 +16,28 @@
       },
     }
   }
-</script>
+</script> -->
 
 <script>
-  export let page, slug
+  // export let page, slug
 
-  import { pages } from '$lib/stores'
-  if (!!slug && !!page) $pages[slug] = page
+  // import { pages } from '$lib/stores'
+  // if (!!slug && !!page) $pages[slug] = page
 
   import '../lib/styles/app.css'
   import SEO from '$lib/components/SEO/SEO.svelte'
   import Nav from '$lib/components/Nav/Nav.svelte'
   import Footer from '$lib/components/Footer/Footer.svelte'
 </script>
-
+<!-- 
 {#if !!page?.seo}
   <SEO {...page.seo} />
-{/if}
+{/if} -->
 
-<Nav
-  cta={slug != 'application' && !!slug && !slug.includes('blog')
-    ? {
-        label: 'apply now',
-        type: 'secondary',
-        shape: 'default',
-        link: '/application',
-      }
-    : null}
-/>
-<div class="pl-12 overflow-hidden">
-  <slot sections={page?.sections} />
+<!-- <Nav /> -->
+
+<div class="overflow-hidden">
+  <slot />
   <Footer />
 </div>
 

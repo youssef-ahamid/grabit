@@ -1,0 +1,58 @@
+<script>
+  import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
+  import Card from '$lib/components/Card/Card.svelte'
+  import Carrousel from '$lib/components/Carrousel/Carrousel.svelte'
+  import Hero from '$lib/components/Hero/Hero.svelte'
+  import Download from '../components/download.svelte'
+
+  export let title
+  export let text
+  export let restaurants = []
+
+  let currentStep = 0
+</script>
+
+<Hero fullHeight>
+  <div class="flex flex-col space-y-4" slot="left">
+    <h1>{title}</h1>
+    <p>{text}</p>
+    <Download class="w-full max-w-[24rem] md:w-96" />
+  </div>
+
+  <div class="h-full overflow-visible bg-cover bg-center bg-no-repeat" style="background-image: url('{restaurants[currentStep].image}') !important" slot="right">
+    {#key restaurants.length}
+      <Carrousel
+      bind:currentStep
+        loop
+        items={restaurants}
+        let:item
+        let:previewed
+        let:index
+      >
+        {#if previewed}
+          <Animateonenterview type="flyRight">
+            <Card
+              className="text-neutralDark text-center bg-neutralLight shadow-lg rounded-3xl overflow-visible h-60"
+            >
+              <div>
+                <img
+                  src={item.logo}
+                  alt="{item.name} logo"
+                  class="w-40 h-40 rounded-xl object-center object-cover -translate-y-20"
+                />
+                <div class="-translate-y-16">
+                  <p class="font-bold">{item.name}</p>
+                  <p>{item.meal}</p>
+                  <p class="strike-through text-red-600">
+                    {item.old_price}
+                  </p>
+                  <p class="text-green-600">{item.price}</p>
+                </div>
+              </div>
+            </Card>
+          </Animateonenterview>
+        {/if}
+      </Carrousel>
+    {/key}
+  </div>
+</Hero>
