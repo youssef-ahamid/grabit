@@ -30,7 +30,9 @@
   import { stylus } from '$lib/helpers'
   import { animationWrapper } from './styles'
 
-  $: wrapper = stylus(animationWrapper({ type, intersecting, duration, delay }))
+  $: wrapper = stylus(
+    animationWrapper({ type, intersecting, duration, delay })
+  )
 </script>
 
 <div

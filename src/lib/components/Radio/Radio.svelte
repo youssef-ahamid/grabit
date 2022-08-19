@@ -1,8 +1,7 @@
 <svelte:options accessors />
 
 <script>
-import { createEventDispatcher } from "svelte";
-
+  import { createEventDispatcher } from 'svelte'
 
   export let items = []
   export let selected = 0
@@ -13,7 +12,7 @@ import { createEventDispatcher } from "svelte";
   export const select = i => {
     value = items[i]?.value
     selected = i
-    dispatch("select", i)
+    dispatch('select', i)
   }
 
   select(selected)

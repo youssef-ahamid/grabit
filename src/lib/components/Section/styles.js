@@ -1,10 +1,9 @@
 export const section = props => {
-  let bg = props.backgroundImage || {};
+  let bg = props.backgroundImage || {}
   return [
     {
       on: true,
-      classes:
-        `relative max-w-[100vw] overflow-hidden bg-cover bg-center bg-no-repeat w-full bg-${props.backgroundColor} text-${props.textColor} py-8`,
+      classes: `relative max-w-[100vw] overflow-hidden bg-cover bg-center bg-no-repeat w-full bg-${props.backgroundColor} text-${props.textColor} py-8`,
     },
     {
       on: !props.noContain,
@@ -24,11 +23,13 @@ export const section = props => {
     },
     {
       on: props.layout == 'center',
-      classes: 'flex flex-col justify-center items-center text-center',
+      classes:
+        'flex flex-col justify-center items-center text-center',
     },
     {
       on: props.layout == 'twoColumn',
-      classes: 'flex flex-col md:flex-row justify-between items-center',
+      classes:
+        'flex flex-col md:flex-row justify-between items-center',
     },
   ]
 }
@@ -40,7 +41,8 @@ export const slotContent = props => {
       on: true,
     },
     {
-      classes: 'flex flex-col justify-center items-center space-y-2 md:space-y-4',
+      classes:
+        'flex flex-col justify-center items-center space-y-2 md:space-y-4',
       on: props.contentLayout == 'center',
     },
     {
@@ -48,7 +50,8 @@ export const slotContent = props => {
       on: props.layout == 'twoColumn',
     },
     {
-      classes: 'flex flex-col md:flex-row md:flex-wrap justify-around items-stretch space-y-4 md:space-x-4 my-40',
+      classes:
+        'flex flex-col md:flex-row md:flex-wrap justify-around items-stretch space-y-4 md:space-x-4 my-40',
       on: props.contentLayout == 'twoColumn',
     },
     {
@@ -61,8 +64,9 @@ export const slotContent = props => {
 export const mainContent = props => {
   return [
     {
-      on: props.layout == "center",
-      classes: 'flex flex-col items-center text-center whitespace-pre-line',
+      on: props.layout == 'center',
+      classes:
+        'flex flex-col items-center text-center whitespace-pre-line',
     },
     {
       on: true,

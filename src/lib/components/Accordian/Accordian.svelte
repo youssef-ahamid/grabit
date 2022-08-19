@@ -50,7 +50,7 @@
     }}
   >
     <div class={titleWrapper.classes}>
-      <h3>{item.title}</h3>
+      <h3>{item.question}</h3>
       <Chevron
         stroke="3"
         className="{open === index
@@ -61,7 +61,7 @@
   </Card>
   {#if open === index}
     <div transition:slide={{ duration: 300 }} class={content.classes}>
-      <p>{item.content}</p>
+      {@html item.answer}
     </div>
   {/if}
 </List>

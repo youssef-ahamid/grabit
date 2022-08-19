@@ -33,7 +33,8 @@ export const navLinkWrapper = props => {
 export const navSublinkList = props => {
   return [
     {
-      classes: 'absolute top-full left-2 lg:left-auto lg:right-2 w-72 bg-primary p-6 space-y-6 shadow-lg rounded-2xl transition duration-300 ease-out z-[999]',
+      classes:
+        'absolute top-full left-2 lg:left-auto lg:right-2 w-72 bg-primary p-6 space-y-6 shadow-lg rounded-2xl transition duration-300 ease-out z-[999]',
       styles: '',
       on: true, // default
     },
@@ -53,7 +54,8 @@ export const navSublinkList = props => {
 export const navSublink = props => {
   return [
     {
-      classes: 'text-neutralLight slide-underline flex justify-between items-center',
+      classes:
+        'text-neutralLight slide-underline flex justify-between items-center',
       styles: '',
       on: true, // default
     },

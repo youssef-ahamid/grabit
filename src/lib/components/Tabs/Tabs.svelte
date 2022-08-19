@@ -11,7 +11,13 @@
   $: onTabChange(tabs[activeTab])
 </script>
 
-<List items={tabs} let:item={tab} let:index horizontal className="flex-nowrap space-x-4 md:space-x-6">
+<List
+  items={tabs}
+  let:item={tab}
+  let:index
+  horizontal
+  className="flex-nowrap space-x-4 md:space-x-6"
+>
   <div
     on:click={() => {
       activeTab = index

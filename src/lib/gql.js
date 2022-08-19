@@ -1,12 +1,14 @@
-import { GraphQLClient } from "graphql-request";
+import { GraphQLClient } from 'graphql-request'
 import {
   blogPreviewQuery,
   blogQuery,
   pageQuery,
   sectionQuery,
-} from "./queries";
+} from './queries'
 
-export const graphcms = new GraphQLClient(import.meta.env.VITE_GRAPHCMS_URL);
+export const graphcms = new GraphQLClient(
+  import.meta.env.VITE_GRAPHCMS_URL
+)
 
 export async function getPage(slug) {
   const { page } = await graphcms.request(`
@@ -15,8 +17,8 @@ export async function getPage(slug) {
         ${pageQuery}
       }
     }
-  `);
-  return page;
+  `)
+  return page
 }
 
 export async function getBlog(slug) {
@@ -24,9 +26,9 @@ export async function getBlog(slug) {
     {
       blog(where: {slug: "${slug}"}) ${blogQuery}      
     }
-  `);
-  blog.content = blog.content.reverse();
-  return blog;
+  `)
+  blog.content = blog.content.reverse()
+  return blog
 }
 
 export async function getBlogPreviews() {
@@ -34,20 +36,20 @@ export async function getBlogPreviews() {
     {
       blogs ${blogPreviewQuery}      
     }
-  `);
-  return blogs;
+  `)
+  return blogs
 }
 
-const parse = (obj) => {
-  let str = "";
+const parse = obj => {
+  let str = ''
   for (const [key, value] of Object.entries(obj)) {
-    str += `${key}: "${value}", `;
+    str += `${key}: "${value}", `
   }
-  return str;
-};
+  return str
+}
 
-export const submitApplication = async (application) => {
-  let parsedApplication = parse(application);
+export const submitApplication = async application => {
+  let parsedApplication = parse(application)
   const data = await graphcms.request(
     `
     mutation {
@@ -58,9 +60,9 @@ export const submitApplication = async (application) => {
       }
   `,
     application
-  );
-  return data;
-};
+  )
+  return data
+}
 
 export async function getSection(id) {
   const { section } = await graphcms.request(`
@@ -69,6 +71,6 @@ export async function getSection(id) {
         ${sectionQuery}
       }
     }
-  `);
-  return section;
+  `)
+  return section
 }

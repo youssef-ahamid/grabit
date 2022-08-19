@@ -1,4 +1,4 @@
-export let footer = 'w-full pb-6 relative'
+export let footer = 'w-full pb-6 relative flex justify-start'
 export let list =
   'w-full lg:max-w-[70%] px-8 grid grid-cols-2 gap-4 items-start my-6 z-[999]'
 export let links =

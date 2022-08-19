@@ -7,7 +7,12 @@ export const buttonQuery = `
     shape
     type
   }
-`;
+`
+
+export const downloadLinkQuery = `
+  downloadLinkAndroid
+  downloadLinkIos
+`
 
 export const blogPreviewQuery = `
   {
@@ -22,55 +27,81 @@ export const blogPreviewQuery = `
     }
     createdAt
   }
-`;
+`
+
+export const featuredBlogsQuery = `
+{
+  blogs ${blogPreviewQuery}
+}
+`
+
+export const restaurantQuery = `
+{
+  logo {
+    url
+  }
+  image {
+    url
+  }
+  name
+  meal
+  old_price
+  price
+}
+`
+
+export const heroQuery = `
+  {
+    ${downloadLinkQuery}
+    restaurants ${restaurantQuery}
+  }
+`
+
+export const FAQQuery = `
+  {
+    items {
+      question
+      answer {
+        html
+        text
+      }
+    }
+  }
+`
+
+export const HIWQuery = `
+  {
+    image {
+      url
+    }
+    steps {
+      title
+      text
+    }
+  }
+`
+
+export const CTAQuery = `
+{
+  ${downloadLinkQuery}
+}
+`
 
 export const sectionQuery = `
   identifier
-  backgroundImage {
+  text
+  title
+  icon {
     url
   }
-  backgroundColor
-  button ${buttonQuery}
-  contentLayout
   content {
-    __typename
-    ... on Button ${buttonQuery}
-    ... on Division {
-      text
-      title
-      subtitle
-      image {
-        url
-      }
-    }
-    ... on InfoCard {
-      icon
-      infoItem
-      title
-      type
-    }
-    ... on Image {
-      image {
-        url
-      }
-      alt
-    }
-    ... on Quote {
-      name
-      role
-      text
-      image {
-        url
-      }
-    }
+    ... on HowItWorks ${HIWQuery}
+    ... on FAQ ${FAQQuery}
+    ... on CTA ${CTAQuery}
+    ... on Hero ${heroQuery}
+    ... on FeaturedBlogs ${featuredBlogsQuery}
   }
-  text
-  boldDescription
-  textColor
-  title
-  layout
-  fullHeight
-`;
+`
 
 export const blogQuery = `
   {
@@ -108,7 +139,7 @@ export const blogQuery = `
     createdAt
     related(first: 3, orderBy: createdAt_DESC) ${blogPreviewQuery}
   }
-`;
+`
 
 export const pageQuery = `
   slug,
@@ -122,7 +153,4 @@ export const pageQuery = `
   sections {
     ${sectionQuery}
   }
-  hero {
-    ${sectionQuery}
-  }
-`;
+`

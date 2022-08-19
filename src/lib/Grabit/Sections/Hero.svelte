@@ -7,22 +7,35 @@
 
   export let title
   export let text
+  export let downloadLinkIos
+  export let downloadLinkAndroid
   export let restaurants = []
+
+  export let className
 
   let currentStep = 0
 </script>
 
-<Hero fullHeight>
+<Hero fullHeight {className}>
   <div class="flex flex-col space-y-4" slot="left">
     <h1>{title}</h1>
     <p>{text}</p>
-    <Download class="w-full max-w-[24rem] md:w-96" />
+    <Download
+      ios={downloadLinkIos}
+      android={downloadLinkAndroid}
+      class="w-full max-w-[24rem] md:w-96"
+    />
   </div>
 
-  <div class="h-full overflow-visible bg-cover bg-center bg-no-repeat" style="background-image: url('{restaurants[currentStep].image}') !important" slot="right">
+  <div
+    class="h-full overflow-visible bg-cover bg-center bg-no-repeat"
+    style="background-image: url('{restaurants[currentStep]
+      .image}') !important"
+    slot="right"
+  >
     {#key restaurants.length}
       <Carrousel
-      bind:currentStep
+        bind:currentStep
         loop
         items={restaurants}
         let:item
@@ -43,10 +56,12 @@
                 <div class="-translate-y-16">
                   <p class="font-bold">{item.name}</p>
                   <p>{item.meal}</p>
-                  <p class="strike-through text-red-600">
-                    {item.old_price}
+                  <p
+                    class="strike-through text-red-600 line-through scale-75"
+                  >
+                    {item.old_price}EGP
                   </p>
-                  <p class="text-green-600">{item.price}</p>
+                  <p class="text-green-600">{item.price}EGP</p>
                 </div>
               </div>
             </Card>

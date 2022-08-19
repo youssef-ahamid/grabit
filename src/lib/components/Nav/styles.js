@@ -66,13 +66,13 @@ export let nav = options => {
         'fixed bg-brandDark top-0 bottom-0 left-0 min-w-[20rem] max-w-fit z-[900] transition duration-700 ease-out',
     },
     {
-      classes: "-translate-x-[110%]",
+      classes: '-translate-x-[110%]',
       on: [options.active, false],
     },
     {
-      classes: "translate-x-12",
+      classes: 'translate-x-12',
       on: [options.active, true],
-    }
+    },
   ]
 }
 

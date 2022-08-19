@@ -17,12 +17,12 @@
   let error = ''
   let checked = false
 
-  $: checked? validate(active): null
+  $: checked ? validate(active) : null
 
   export const validate = (state = active) => {
     checked = true
     if (validations.includes('required')) {
-      error = state? null : "This field is required"
+      error = state ? null : 'This field is required'
       clean = state
     }
   }
@@ -30,12 +30,15 @@
   import { stylus } from '$lib/helpers'
   import { checkboxWrapper, checkboxInput } from './styles'
 
-  $: wrapper = stylus(checkboxWrapper({ active, error, ...styleOptions }))
-  $: checkbox = stylus(checkboxInput({ active, error, ...styleOptions }))
-
+  $: wrapper = stylus(
+    checkboxWrapper({ active, error, ...styleOptions })
+  )
+  $: checkbox = stylus(
+    checkboxInput({ active, error, ...styleOptions })
+  )
 </script>
 
-<label class="{wrapper.classes} {className}" >
+<label class="{wrapper.classes} {className}">
   <input
     bind:checked={active}
     type="checkbox"
@@ -47,4 +50,3 @@
   </p>
   <slot />
 </label>
-

@@ -3,13 +3,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        neutral: '#FFF7F0',
+        neutral: '#FFF4E9',
         neutralDark: '#000000',
         neutralLight: '#ffffff',
-        brand: "#B9752A",
-        brandDark: "#621227",
-        brandLight: "#FADA79",
-        accent: "#9ef372"
+        brand: '#01BAEF',
+        brandDark: '#621227',
+        brandLight: '#FADA79',
+        accent: '#F15025',
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],

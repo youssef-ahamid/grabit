@@ -4,7 +4,7 @@
   export let icon = ''
   export let title = ''
   export let styleOptions = {}
-  
+
   import { resolve } from '$lib/icons'
 
   /* styles */

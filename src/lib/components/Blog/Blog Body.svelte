@@ -1,5 +1,5 @@
 <script>
-import { createArray } from '$lib/helpers';
+  import { createArray } from '$lib/helpers'
 
   import Button from '../Button/Button.svelte'
   import Go from '../Go/Go.svelte'
@@ -50,7 +50,7 @@ import { createArray } from '$lib/helpers';
         </Go>
       {/if}
     {/each}
-    <div class="mt-8 h-px bg-gray-300 w-full"></div>
+    <div class="mt-8 h-px bg-gray-300 w-full" />
   </div>
   <BlogNav {sections} bind:active={activeSection} />
 </div>

@@ -4,6 +4,8 @@
 
   export let title
   export let text
+  export let downloadLinkIos
+  export let downloadLinkAndroid
   // export let image
   // export let downloadIOS
   // export let downloadGooglePlay
@@ -17,5 +19,5 @@
   textColor="neutralLight"
 >
   <!-- Download buttons -->
-  <Download ios="https:/apple.com" android="htiips://google.com" />
+  <Download ios={downloadLinkIos} android={downloadLinkAndroid} />
 </Section>

@@ -53,7 +53,9 @@
       ...styleOptions,
     })
   )
-  $: errorStyles = stylus(textInputError({ type, clean, ...styleOptions }))
+  $: errorStyles = stylus(
+    textInputError({ type, clean, ...styleOptions })
+  )
   $: CTA = stylus(textInputCTA({ type, clean, ...styleOptions }))
 
   /* transitions */
@@ -62,7 +64,7 @@
   /* events */
   import { createEventDispatcher } from 'svelte/internal'
   import Button from '$lib/components/Button/Button.svelte'
-import Chevron from '$lib/icons/shape/chevron.svelte'
+  import Chevron from '$lib/icons/shape/chevron.svelte'
   const dispatch = createEventDispatcher()
   const valid = () => dispatch('valid', value)
   const invalid = () => dispatch('invalid', value)
@@ -134,7 +136,9 @@ import Chevron from '$lib/icons/shape/chevron.svelte'
         </option>
       {/each}
     </select>
-    <Chevron className="absolute right-4 top-1/2 text-brand w-6 md:w-8 rotate-90 peer-focus:-rotate-90" />
+    <Chevron
+      className="absolute right-4 top-1/2 text-brand w-6 md:w-8 rotate-90 peer-focus:-rotate-90"
+    />
   {:else if type === 'date'}
     <input
       id={label}
@@ -169,7 +173,10 @@ import Chevron from '$lib/icons/shape/chevron.svelte'
       </div>
     {/if}
     {#if !clean}
-      <p transition:slide={{ duration: 300 }} class={errorStyles.classes}>
+      <p
+        transition:slide={{ duration: 300 }}
+        class={errorStyles.classes}
+      >
         {error}
       </p>
     {/if}

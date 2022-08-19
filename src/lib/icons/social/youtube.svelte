@@ -1,7 +1,7 @@
 <script>
-    export let className = ''
+  export let className = ''
 </script>
-  
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   class="w-full h-auto group {className}"

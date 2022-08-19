@@ -1,11 +1,12 @@
 <script>
-  export let content
+  import SEO from '$lib/components/SEO/SEO.svelte'
+  import Section from '$lib/Grabit/Sections/Section.svelte'
 
-  import FAQ from '$lib/Grabit/Sections/FAQ.svelte'
-  import CTA from '$lib/Grabit/Sections/CTA.svelte'
-import HomeHero from '$lib/Grabit/Sections/HomeHero.svelte';
+  export let content
 </script>
 
-<HomeHero {...content.Hero} />
-<FAQ {...content.FAQ} />
-<CTA {...content.CTA} />
+<SEO {...content.seo} />
+
+{#each content.sections as section}
+  <Section data={section} name={section.identifier} />
+{/each}

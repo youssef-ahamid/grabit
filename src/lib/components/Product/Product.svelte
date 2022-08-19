@@ -12,9 +12,16 @@
   export let specs
 </script>
 
-<div class="w-full my-4 flex flex-col space-y-1 md:space-y-4 text-left">
+<div
+  class="w-full my-4 flex flex-col space-y-1 md:space-y-4 text-left"
+>
   {#if !!image}
-    <Image className="w-80 md:w-96 h-80 md:h-96 p-4" type="custom" styleOptions={{ padding: 20 }} src={image.url} />
+    <Image
+      className="w-80 md:w-96 h-80 md:h-96 p-4"
+      type="custom"
+      styleOptions={{ padding: 20 }}
+      src={image.url}
+    />
   {/if}
   <div class="px-1 py-5 md:py-1">
     <h2 class="text-neutralDark max-w-xs">{title}</h2>

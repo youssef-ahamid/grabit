@@ -1,9 +1,10 @@
 export const animationWrapper = props => {
   return [
     {
-      classes:
-        `transition ease-out oveflow-hidden`,
-        styles: `transition-duration: ${props.duration || 700}ms !important;`,
+      classes: `transition ease-out oveflow-hidden`,
+      styles: `transition-duration: ${
+        props.duration || 700
+      }ms !important;`,
       on: true,
     },
     {

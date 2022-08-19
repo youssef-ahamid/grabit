@@ -7,45 +7,44 @@ export const serializeClasses = (styles, condition) => {
 
 export class api {
   constructor(base_url, options = {}) {
-    this.base_url = base_url;
-    this.options = options;
+    this.base_url = base_url
+    this.options = options
   }
 
   async request(method, url, options) {
     let opts = {
       method: method,
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'Content-Type':
+          'application/x-www-form-urlencoded; charset=UTF-8',
         ...this.options.headers,
       },
       ...options,
-    };
+    }
 
-    if (opts.body) opts.body = JSON.stringify(opts.body);
-    
-    let res = await fetch(this.base_url + url, opts);
-    let data = await res.json();
+    if (opts.body) opts.body = JSON.stringify(opts.body)
+
+    let res = await fetch(this.base_url + url, opts)
+    let data = await res.json()
 
     if (res.status >= 200 && res.status < 300) {
-      return data;
+      return data
     } else {
-      let error = new Error(res.statusText);
-      error.response = res;
-      throw error;
+      let error = new Error(res.statusText)
+      error.response = res
+      throw error
     }
   }
 
-
   async get(url = '', options = {}) {
-    return this.request('GET', url, options);
+    return this.request('GET', url, options)
   }
 
   async post(url = '', body = {}, options = {}) {
     options.body = body
-    return this.request('POST', url, options);
+    return this.request('POST', url, options)
   }
 }
-
 
 export const is = pair => {
   return pair ? pair[0] == pair[1] : true
@@ -98,12 +97,12 @@ export const getMonthDate = timestamp => {
 
 export const createArray = (
   N,
-  F = (num) => {
-    return num;
+  F = num => {
+    return num
   }
 ) => {
-  return [...Array(N).keys()].map((i) => F(i));
-};
+  return [...Array(N).keys()].map(i => F(i))
+}
 
 export const getComponentData = (components, component) => {
   if (components.length == 0 || !Array.isArray(components))

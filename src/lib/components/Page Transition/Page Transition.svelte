@@ -13,8 +13,8 @@
     start = true
   })
 
-  import { createEventDispatcher } from 'svelte';
-  const dispatch = createEventDispatcher();
+  import { createEventDispatcher } from 'svelte'
+  const dispatch = createEventDispatcher()
 
   const loadingend = () => dispatch('loadend')
 
@@ -32,7 +32,6 @@
     in:slide={{ duration: 300 }}
     out:fade={{ duration: 300, delay: 2400 }}
     on:outrostart={loadingend}
-    
   >
     <div class="flex justify-center items-center">
       <div

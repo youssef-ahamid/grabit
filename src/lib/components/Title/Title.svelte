@@ -1,13 +1,12 @@
 <script>
-  
   /* props */
   export let className = '' // *, custom wrapper classes
   export let line = true
   export let lineColor = 'brand'
   export let layout = 'default'
-  
+
   /* styles */
-  import { stylus } from '$lib/helpers';
+  import { stylus } from '$lib/helpers'
   import { titleText } from './styles'
   $: tit = stylus(titleText({ line, layout, lineColor }))
 </script>
