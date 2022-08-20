@@ -12,23 +12,23 @@
 </script>
 
 <div
-  class="bg-neutralLight rounded-3xl shadow-lg hover:shadow-sm transition-300 w-full relative {!detailed
+  class="bg-neutralLight rounded-3xl shadow-lg hover:shadow-sm transition-300 w-full relative h-44 md:h-60 bg-cover bg-center bg-no-repeat {!detailed
     ? 'max-w-md'
     : ''} self-center pt-4 {className}"
-  style="background-image: url(blog.image?.url) !important;"
+  style="background-image: url({blog.image?.url}) !important;"
   title="{blog.title} | {blog.description}"
 >
   <div
-    class="absolute inset-0 rounded-3xl bg-gradient-b to-black flex flex-col justify-end px-4"
+    class="absolute inset-0 rounded-3xl bg-gradient-to-t from-neutralDark flex flex-col justify-end px-6 py-2 text-neutralLight"
   >
     <h3>{blog.title}</h3>
     <div class="flex justify-between">
-      <div class="flex flex-col space-y-1 px-4">
-        <p class="text-sm text-neutralLight opacity-75">
+      <div class="flex flex-col space-y-0.5">
+        <p class="text-sm font-bold capitalize text-neutralLight opacity-75">
           {blog.author.name}
         </p>
         <p
-          class="text-xs md:text-sm font-bold text-gray-500 whitespace-nowrap"
+          class="text-xs md:text-sm font-bold opacity-50 whitespace-nowrap"
         >
           {getMonthDate(blog.createdAt)}
         </p>

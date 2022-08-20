@@ -26,7 +26,7 @@
 <Section
   id="footer"
   noContain
-  className="bg-neutralDark max-w-[100vw] relative overflow-visible"
+  className="bg-neutralDark max-w-[100vw] relative overflow-visible mt-20"
 >
   <div
     class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-neutralLight rounded-3xl shadow-2xl w-full max-w-[80%] grid grid-cols-2 p-12"

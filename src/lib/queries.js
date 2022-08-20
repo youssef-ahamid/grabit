@@ -22,6 +22,9 @@ export const blogPreviewQuery = `
     tags {
       title
     }
+    author {
+      name
+    }
     image {
       url
     }
