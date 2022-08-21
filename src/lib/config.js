@@ -7,13 +7,13 @@ export const site = {
 }
 
 export const logo = {
-  src: 'https://media.graphassets.com/McESAKAGQsmwo9YHwT4q',
-  alt: 'NewCastle School',
+  src: 'https://media.graphassets.com/n0rUVJulR5OH83KWmvvi',
+  alt: 'Grabit',
 }
 
-export const logoSmall = {
-  src: 'https://media.graphassets.com/KgsQe7GiR8uYyCItPSOk',
-  alt: 'NewCastle School',
+export const logoWhite = {
+  src: 'https://media.graphassets.com/E75sIzRXR7mEuNaxLqkQ',
+  alt: 'Grabit',
 }
 
 export const links = [

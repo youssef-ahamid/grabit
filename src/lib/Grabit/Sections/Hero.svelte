@@ -3,6 +3,7 @@
   import Card from '$lib/components/Card/Card.svelte'
   import Carrousel from '$lib/components/Carrousel/Carrousel.svelte'
   import Hero from '$lib/components/Hero/Hero.svelte'
+  import Nav from '$lib/components/Nav/Nav.svelte'
   import Download from '../components/download.svelte'
 
   export let title
@@ -16,8 +17,9 @@
   let currentStep = 0
 </script>
 
+<Nav />
 <Hero fullHeight {className}>
-  <div class="flex flex-col space-y-4" slot="left">
+  <div class="flex flex-col space-y-4 relative" slot="left">
     <h1>{title}</h1>
     <p>{text}</p>
     <Download
@@ -29,8 +31,8 @@
 
   <div
     class="h-full overflow-visible bg-cover bg-center bg-no-repeat"
-    style="background-image: url('{restaurants[currentStep]
-      .image?.url}') !important"
+    style="background-image: url('{restaurants[currentStep].image
+      ?.url}') !important"
     slot="right"
   >
     {#key restaurants.length}

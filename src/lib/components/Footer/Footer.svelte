@@ -19,6 +19,7 @@
   import Animateonenterview from '../Animate On Enter View/animate on enter view.svelte'
 
   import Icon from '$lib/components/Icon/Icon.svelte'
+  import { logoWhite } from '$lib/config'
 
   $: classes = config()
 </script>
@@ -32,7 +33,9 @@
     <div
       class="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-neutralLight rounded-3xl shadow-2xl w-full max-w-[80%] grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:p-12"
     >
-      <div class="flex space-x-2 md:space-x-4 px-2 md:px-4 items-center">
+      <div
+        class="flex space-x-2 md:space-x-4 px-2 md:px-4 items-center"
+      >
         <div class="p-4 rounded-full bg-brand">
           <Icon
             name="emailAttachment"
@@ -47,7 +50,9 @@
           </p>
         </Go>
       </div>
-      <div class="flex space-x-2 md:space-x-4 px-2 md:px-4 items-center">
+      <div
+        class="flex space-x-2 md:space-x-4 px-2 md:px-4 items-center"
+      >
         <div class="p-4 rounded-full bg-brand">
           <Icon name="phone" className="w-6 text-neutralLight" />
         </div>
@@ -69,10 +74,10 @@
       <div
         class="w-48 text-left float-left mt-10 flex flex-col justify-start items-start text-neutralLight"
       >
-        <!-- <img src="{logo}" alt=""> -->
+        <img {...logoWhite} class="w-24 -mb-4" />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim
-          bibendum iaculis
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Enim bibendum iaculis
         </p>
         <div class="flex space-x-2">
           {#each socials as social, i}

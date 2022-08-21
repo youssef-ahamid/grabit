@@ -37,9 +37,9 @@
           : 'opacity-50 scale-[85%] hover:scale-[85%]'}"
       >
         <div
-          class="h-2 w-2 rounded-full transition-300 {active ===
-            i
-              ? 'bg-brand': 'bg-current'}"
+          class="h-2 w-2 rounded-full transition-300 {active === i
+            ? 'bg-brand'
+            : 'bg-current'}"
         />
         <p class="font-bold text-neutralDark">{section.title}</p>
       </Go>

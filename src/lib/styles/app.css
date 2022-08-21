@@ -59,7 +59,7 @@
   }
 
   .richtext p {
-    @apply whitespace-pre-line py-1
+    @apply whitespace-pre-line py-1;
   }
 
   br {

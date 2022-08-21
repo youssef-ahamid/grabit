@@ -30,7 +30,11 @@
           <div
             class="w-10 h-10 md:w-16 md:h-16 flex justify-center items-center bg-neutral group-hover:bg-brand group-hover:ring-neutral ring-transparent ring-2 rounded-full transition-300"
           >
-            <p class="text-brand text-xl md:text-3xl font-bold group-hover:text-neutral transition-300">{i + 1}</p>
+            <p
+              class="text-brand text-xl md:text-3xl font-bold group-hover:text-neutral transition-300"
+            >
+              {i + 1}
+            </p>
           </div>
           <div
             class="flex max-w-[80%] flex-col space-y-2 text-neutralDark group-hover:text-neutralLight transition-300"

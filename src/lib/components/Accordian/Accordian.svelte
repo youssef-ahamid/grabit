@@ -60,7 +60,10 @@
     </div>
   </Card>
   {#if open === index}
-    <div transition:slide={{ duration: 300 }} class="richtext {content.classes}">
+    <div
+      transition:slide={{ duration: 300 }}
+      class="richtext {content.classes}"
+    >
       {@html item.answer.html}
     </div>
   {/if}

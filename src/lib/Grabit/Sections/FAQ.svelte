@@ -7,7 +7,7 @@
   export let text
 </script>
 
-<Section layout=center>
+<Section layout="center">
   <div class="flex flex-col items-center w-full pb-6">
     <h2>{title}</h2>
     {#if text}

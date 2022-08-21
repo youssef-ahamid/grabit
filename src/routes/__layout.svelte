@@ -1,17 +1,21 @@
 <script context="module">
-export const prerender = true
+  export const prerender = true
 </script>
+
 <script>
   import '../lib/styles/app.css'
   import Nav from '$lib/components/Nav/Nav.svelte'
   import Footer from '$lib/components/Footer/Footer.svelte'
+  import { loading } from '$lib/stores'
 </script>
 
 <!-- <Nav /> -->
 
 <div class="overflow-hidden">
-  <slot />
-  <Footer />
+  {#if $loading.length === 0}
+    <slot />
+    <Footer />
+  {/if}
 </div>
 
 <div
