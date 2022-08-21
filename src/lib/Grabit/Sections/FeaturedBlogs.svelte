@@ -17,7 +17,7 @@
       <p>{text}</p>
     {/if}
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center place-items-center">
     {#each blogs as blog}
       <BlogCard {blog} />
     {/each}

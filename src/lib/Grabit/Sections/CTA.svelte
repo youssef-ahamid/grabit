@@ -17,6 +17,8 @@
   layout="center"
   backgroundColor="brand"
   textColor="neutralLight"
+  className="pb-20 md:pb-32"
+  boldDescription
 >
   <!-- Download buttons -->
   <Download ios={downloadLinkIos} android={downloadLinkAndroid} />

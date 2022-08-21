@@ -7,6 +7,12 @@
   export let text
 </script>
 
-<Section {title} {text} layout="center">
+<Section layout=center>
+  <div class="flex flex-col items-center w-full pb-6">
+    <h2>{title}</h2>
+    {#if text}
+      <p>{text}</p>
+    {/if}
+  </div>
   <Accordian {items} />
 </Section>

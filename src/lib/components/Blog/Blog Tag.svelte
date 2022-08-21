@@ -10,8 +10,8 @@
   to="/blog{active && deselects ? '' : `?tag=${tag.title}`}"
   className="px-5 mr-2 mb-1 py-1 
   {active
-    ? 'bg-brand text-neutralLight'
-    : 'text-brand bg-brand/25'} rounded-full flex items-center justify-center hover:bg-brand cursor-pointer hover:scale-105 transition-300 hover:text-neutralLight"
+    ? 'bg-neutralLight text-neutralDark'
+    : 'text-neutralLight bg-neutralLight/25'} rounded-full flex items-center justify-center hover:bg-neutralLight cursor-pointer hover:scale-105 transition-300 hover:text-neutralDark"
 >
   <p class="font-bold uppercase">{tag.title}</p>
 </Go>

@@ -1,4 +1,4 @@
-export let link = 'max-w-fit'
+export let link = ''
 export let pseudoLink = 'flex justify-start relative cursor-pointer'
 
 export const config = () => {

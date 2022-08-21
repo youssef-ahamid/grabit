@@ -14,7 +14,7 @@
 <svelte:window bind:innerHeight={h} />
 
 <div
-  class="hidden md:block w-80 min-h-full"
+  class="hidden md:block w-80 min-h-full bg-slate-100 "
   use:inView={{ bottom: h }}
   on:enter={() => {
     inside = true
@@ -24,7 +24,7 @@
   }}
 >
   <div
-    class="py-12 right-0 top-0 {inside
+    class="py-12 right-0 top-0 pl-6 {inside
       ? 'fixed'
       : 'absolute'} w-80 flex flex-col space-y-2"
   >
@@ -34,12 +34,14 @@
         className="transition-300 flex items-center space-x-2 origin-left text-neutralDark hover:text-brand hover:opacity-90 {active ===
         i
           ? ''
-          : 'opacity-50 scale-75 hover:scale-[85%]'}"
+          : 'opacity-50 scale-[85%] hover:scale-[85%]'}"
       >
         <div
-          class="h-2 w-16 rounded-full transition-300 bg-current"
+          class="h-2 w-2 rounded-full transition-300 {active ===
+            i
+              ? 'bg-brand': 'bg-current'}"
         />
-        <p class="font-bold">{section.title}</p>
+        <p class="font-bold text-neutralDark">{section.title}</p>
       </Go>
     {/each}
   </div>

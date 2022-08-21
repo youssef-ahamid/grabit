@@ -99,8 +99,7 @@
         lineColor={backgroundColor == 'neutral' ||
         backgroundColor == 'neutralLight'
           ? 'brand'
-          : 'current'}
-        line={title.length > 0}>{title}</Title
+          : 'current'}>{title}</Title
       >
     </Animateonenterview>
     {#if !!text}

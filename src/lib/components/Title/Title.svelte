@@ -1,7 +1,7 @@
 <script>
   /* props */
   export let className = '' // *, custom wrapper classes
-  export let line = true
+  export let line = false
   export let lineColor = 'brand'
   export let layout = 'default'
 

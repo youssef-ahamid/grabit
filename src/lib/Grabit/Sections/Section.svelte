@@ -6,6 +6,10 @@
 
   export let className = ''
 
+  if (!name) name = data.identifier
+  if (!name) name = 'CTA'
+  console.log({name, data})
+
   if (data.content)
     data = {
       ...data.content,
@@ -16,6 +20,8 @@
   delete data.identifier
 </script>
 
-{#await Sections[name]() then module}
-  <svelte:component this={module.default} {className} {...data} />
-{/await}
+{#if name}
+  {#await Sections[name]() then module}
+    <svelte:component this={module.default} {className} {...data} />
+  {/await}
+{/if}

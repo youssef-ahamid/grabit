@@ -30,7 +30,7 @@
   <div
     class="h-full overflow-visible bg-cover bg-center bg-no-repeat"
     style="background-image: url('{restaurants[currentStep]
-      .image}') !important"
+      .image?.url}') !important"
     slot="right"
   >
     {#key restaurants.length}
@@ -49,7 +49,7 @@
             >
               <div>
                 <img
-                  src={item.logo}
+                  src={item.logo?.url}
                   alt="{item.name} logo"
                   class="w-40 h-40 rounded-xl object-center object-cover -translate-y-20"
                 />

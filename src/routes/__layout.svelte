@@ -1,3 +1,6 @@
+<script context="module">
+export const prerender = true
+</script>
 <script>
   import '../lib/styles/app.css'
   import Nav from '$lib/components/Nav/Nav.svelte'

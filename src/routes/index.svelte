@@ -8,5 +8,5 @@
 <SEO {...content.seo} />
 
 {#each content.sections as section}
-  <Section data={section} name={section.identifier} />
+  <Section data={section} />
 {/each}
