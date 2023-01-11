@@ -2,6 +2,8 @@
   /* props */
   export let email = 'zaagel@samuraisoftware.house'
   export let phone = '+201200525233'
+  export let text =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim bibendum iaculis'
   export let phoneDisplay = '(+20)-120-0525-233'
 
   export let socials = []
@@ -76,8 +78,7 @@
       >
         <img {...logoWhite} class="w-24 -mb-4" />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Enim bibendum iaculis
+          {text}
         </p>
         <div class="flex space-x-2">
           {#each socials as social, i}

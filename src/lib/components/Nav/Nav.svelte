@@ -4,7 +4,7 @@
 </script>
 
 <div
-  class="w-full absolute top-0 inset-x-o bg-neutralLight bg-opacity-50 z-[999]"
+  class="w-full absolute top-0 inset-x-o  z-[999]"
 >
   <div class="flex px-4 justify-between items-center">
     <Go to="/">

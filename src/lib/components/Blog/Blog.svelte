@@ -13,7 +13,7 @@
 </script>
 
 <Seo
-  title={blog.title}
+  title="Grabit | {blog.title}"
   description={blog.description}
   image={blog.image}
   ld={{ name: 'article', data: blog }}

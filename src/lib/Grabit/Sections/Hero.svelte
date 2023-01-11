@@ -1,4 +1,4 @@
-<script>
+s<script>
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   import Card from '$lib/components/Card/Card.svelte'
   import Carrousel from '$lib/components/Carrousel/Carrousel.svelte'

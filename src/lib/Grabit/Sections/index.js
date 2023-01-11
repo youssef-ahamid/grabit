@@ -3,6 +3,7 @@ import FAQ from './FAQ.svelte'
 import FeaturedBlogs from './FeaturedBlogs.svelte'
 import HowItWorks from './HowItWorks.svelte'
 import CTA from './CTA.svelte'
+import Footer from '../../components/Footer/Footer.svelte'
 
 export default {
   Hero,
@@ -10,4 +11,5 @@ export default {
   FeaturedBlogs,
   HowItWorks,
   CTA,
+  Footer,
 }

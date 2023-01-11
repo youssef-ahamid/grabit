@@ -90,19 +90,25 @@ export const CTAQuery = `
 }
 `
 
+export const footerQuery = `
+  {
+    phone
+    email
+    copyright
+  }
+`
+
 export const sectionQuery = `
   identifier
   text
   title
-  icon {
-    url
-  }
   content {
     ... on HowItWorks ${HIWQuery}
     ... on FAQ ${FAQQuery}
     ... on CTA ${CTAQuery}
     ... on Hero ${heroQuery}
     ... on FeaturedBlogs ${featuredBlogsQuery}
+    ... on Footer ${footerQuery}
   }
 `
 
