@@ -79,13 +79,13 @@ export const buttonIcon = props => {
       on: props.shape != 'icon',
     },
     {
-      classes: 'group-hover:translate-x-2 group-active:translate-x-0',
+      classes: 'group-hover:translate-x-1 group-active:translate-x-0',
       styles: '',
       on: !props.reverse && props.icon != 'chevron_up',
     },
     {
       classes:
-        'group-hover:-translate-x-2 group-active:translate-x-0',
+        'group-hover:-translate-x-1 group-active:translate-x-0',
       styles: '',
       on: props.reverse && props.icon != 'chevron_up',
     },

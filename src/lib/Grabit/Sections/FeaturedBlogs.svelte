@@ -6,8 +6,6 @@
   export let title
   export let text
   export let blogs = []
-
-  console.log(blogs)
 </script>
 
 <Section>

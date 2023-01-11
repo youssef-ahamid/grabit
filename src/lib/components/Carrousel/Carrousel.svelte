@@ -129,6 +129,7 @@
         <Button
           icon="chevron_left"
           type="primary"
+          className="bg-brand text-white"
           reverse
           shape="icon"
           on:click={prev}
@@ -137,6 +138,7 @@
           icon="chevron_right"
           type="primary"
           shape="icon"
+          className="bg-brand text-white"
           on:click={next}
         />
       </div>

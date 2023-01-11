@@ -11,7 +11,6 @@
   import { pages } from '$lib/stores'
   import Animateonenterview from '$lib/components/Animate On Enter View/animate on enter view.svelte'
   const page = $pages.blog
-  console.log(page)
 
   let titles = {}
   tags.map(t => (titles[t.title] = false))
